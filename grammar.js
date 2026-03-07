@@ -104,7 +104,10 @@ export default grammar({
 
     primitive_value: $ => choice($.integer, $.string, $.float, $.bool),
 
-    string: $ => choice(/".*"/, /'.*'/),
+    string: $ => choice(
+      /"(?:[^"]|\\")*"/,
+      /'(:?[^']|\\')*'/,
+    ),
 
     integer: $ => choice($._decimal_integer, $._binary_integer, $._hexadecimal_integer, $._octal_integer),
     _decimal_integer: $ => /[+-]?[0-9_]+/,
