@@ -25,21 +25,21 @@ export default grammar({
 
     service: $ => seq(
       field('request', repeat($._statement)),
-      $._seperator,
+      $.separator,
       field('response', repeat($._statement)),
     ),
 
     action: $ => seq(
       field('goal', repeat($._statement)),
-      $._seperator,
+      $.separator,
       field('result', repeat($._statement)),
-      $._seperator,
+      $.separator,
       field('feedback', repeat($._statement)),
     ),
 
     _statement: $ => choice($.constant, $.field),
 
-    _seperator: $ => '---',
+    separator: $ => '---',
 
 
     // TODO: DOC COMMENTS?
@@ -63,9 +63,9 @@ export default grammar({
 
     field_default: $ => $.value,
 
-    _type: $ => seq($.base_type, optional($.array)),
+    _type: $ => seq($._base_type, optional($.array)),
 
-    base_type: $ => choice(
+    _base_type: $ => choice(
       $.primitive_type,
       $.custom_type,
       $.external_custom_type,
@@ -88,11 +88,9 @@ export default grammar({
       'time'
     ),
 
-    string_type: $ => seq(/w?string/, optional(seq('<=', /\d+/))),
+    string_type: $ => seq(/w?string/, optional(seq('<=', $.integer))),
 
-    array: $ => seq('[', optional(token.immediate(seq(optional('<='), /\d+/))), ']'),
-
-    // _length: $ => token.immediate(/\d+/),
+    array: $ => seq('[', optional(seq(optional('<='), $.integer)), ']'),
 
     comment: $ => seq(
       '#',
@@ -104,22 +102,26 @@ export default grammar({
       $.array_value,
     ),
 
-    primitive_value: $ => choice($.int_value, $.string, $.float, $.bool),
+    primitive_value: $ => choice($.integer, $.string, $.float, $.bool),
 
     string: $ => choice(/".*"/, /'.*'/),
 
-    // TODO: FIGURE OUT IF + is allowed????
-    int_value: $ => /-?\d+/,
+    integer: $ => choice($._decimal_integer, $._binary_integer, $._hexadecimal_integer, $._octal_integer),
+    _decimal_integer: $ => /[+-]?[0-9_]+/,
+    _binary_integer: $ => /[+-]?0[bB][01_]+/,
+    _hexadecimal_integer: $ => /[+-]?0[xX][a-f0-9A-F_]+/,
+    _octal_integer: $ => /[+-]?0[oO][0-7_]+/,
 
-    float: $ => /[+-]?\d+\.\d+/,
+    float: $ => choice(
+      /[+-]?\d+\.\d+(?:[eE][+-]?\d+)?/,
+      /[+-]?\d[eE][+-]?\d+/,
+    ),
 
     bool: $ => choice(
       'True',
       'true',
-      '1',
       'False',
       'false',
-      '0',
     ),
 
     array_value: $ => seq('[', optional(seq(repeat(seq($.primitive_value, ',')), $.primitive_value)), ']')

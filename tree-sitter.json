@@ -12,7 +12,8 @@
         "action"
       ],
       "injection-regex": "^(ros_interface|rosmsg)$",
-      "class-name": "TreeSitterROSInterface"
+      "class-name": "TreeSitterROSInterface",
+      "highlights": "queries/highlights.scm"
     }
   ],
   "metadata": {
