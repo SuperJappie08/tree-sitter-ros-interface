@@ -43,11 +43,12 @@ jobs:
           test-python: true
           test-go: false
           test-swift: false
+      - name: Install vcs2l
+        uses: threeal/pipx-install-action@v1
+        with:
+          packages: vcs2l
       - name: Set up examples
-        run: |-
-          git clone https://github.com/ros2/common_interfaces examples/common_interfaces --single-branch --depth=1 --filter=blob:none
-          git clone https://github.com/ros2/rcl_interfaces examples/rcl_interfaces --single-branch --depth=1 --filter=blob:none
-          git clone https://github.com/ros2/test_interface_files examples/test_interface_files --single-branch --depth=1 --filter=blob:none
+        run: vcs import --shallow < examples.repos
       - name: Parse examples
         uses: tree-sitter/parse-action@v4
         with:

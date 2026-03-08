@@ -3,7 +3,7 @@
 (comment) @comment
 
 ; field
-(field name: (identifier) @identifier)
+(field name: (identifier) @variable)
 (field type: (custom_type) @type)
 (field type: (external_custom_type) @type)
 ; Make test to check if necessary
@@ -32,4 +32,10 @@
 
 ; Other
 
-(separator) @punctuation.bracket
+(separator) @punctuation.delimiter
+
+; TOD: CHECK THIS IN STRING
+"[" @punctuation.bracket
+"]" @punctuation.bracket
+
+"<=" @none

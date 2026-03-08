@@ -117,7 +117,7 @@ export default grammar({
 
     float: $ => choice(
       /[+-]?\d+\.\d+(?:[eE][+-]?\d+)?/,
-      /[+-]?\d[eE][+-]?\d+/,
+      /[+-]?\d+[eE][+-]?\d+/,
     ),
 
     bool: $ => choice(
