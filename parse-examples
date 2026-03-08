@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+interfaces=$(find examples/ -type f -name '*.msg' -o -name '*.srv' -o -name '*.action')
+
+for interface in $interfaces; do
+	if ! tree-sitter parse "$interface" >/dev/null; then
+		echo "ERROR in: $interface"
+	fi
+done

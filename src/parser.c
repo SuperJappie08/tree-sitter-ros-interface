@@ -661,13 +661,11 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       END_STATE();
     case 5:
       if (lookahead == '\'') ADVANCE(120);
-      if (lookahead == ':') ADVANCE(5);
       if (lookahead == '\\') ADVANCE(6);
       if (lookahead != 0) ADVANCE(5);
       END_STATE();
     case 6:
       if (lookahead == '\'') ADVANCE(121);
-      if (lookahead == ':') ADVANCE(5);
       if (lookahead == '\\') ADVANCE(6);
       if (lookahead != 0) ADVANCE(5);
       END_STATE();
@@ -1375,7 +1373,6 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
     case 121:
       ACCEPT_TOKEN(aux_sym_string_token2);
       if (lookahead == '\'') ADVANCE(120);
-      if (lookahead == ':') ADVANCE(5);
       if (lookahead == '\\') ADVANCE(6);
       if (lookahead != 0) ADVANCE(5);
       END_STATE();

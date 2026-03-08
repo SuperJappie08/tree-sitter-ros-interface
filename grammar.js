@@ -108,7 +108,7 @@ export default grammar({
 
     string: $ => choice(
       /"(?:[^"]|\\")*"/,
-      /'(:?[^']|\\')*'/,
+      /'(?:[^']|\\')*'/,
     ),
 
     integer: $ => choice($._decimal_integer, $._binary_integer, $._hexadecimal_integer, $._octal_integer),
