@@ -14,7 +14,7 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "tree-sitter init-config && npm install"
+	"postCreateCommand": "cargo install tree-sitter-cli --locked && echo \"export PATH=$HOME/.cargo/bin:$PATH\" >> ~/.bashrc && ~/.cargo/bin/tree-sitter init-config && npm install"
 
 	// Configure tool-specific properties.
 	// "customizations": {},
