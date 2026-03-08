@@ -88,9 +88,11 @@ export default grammar({
       'time'
     ),
 
-    string_type: $ => seq(/w?string/, optional(seq('<=', $.integer))),
+    string_type: $ => seq(/w?string/, optional(seq($.upper_bound_specifier, $.integer))),
 
-    array: $ => seq('[', optional(seq(optional('<='), $.integer)), ']'),
+    array: $ => seq('[', optional(seq(optional($.upper_bound_specifier), $.integer)), ']'),
+
+    upper_bound_specifier: $ => '<=',
 
     comment: $ => seq(
       '#',

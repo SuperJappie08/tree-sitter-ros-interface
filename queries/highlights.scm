@@ -38,4 +38,4 @@
 "[" @punctuation.bracket
 "]" @punctuation.bracket
 
-"<=" @none
+(upper_bound_specifier) @operator

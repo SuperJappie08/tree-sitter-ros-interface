@@ -306,30 +306,36 @@ wstring[] unbounded_sequence_of_wstrings
     name: (const_identifier)
     value: (primitive_value (string)))
   message: (field
-    type: (primitive_type (string_type (integer)))
+    type: (primitive_type
+      (string_type (upper_bound_specifier) (integer)))
     name: (identifier))
   message: (field
-    type: (primitive_type (string_type (integer)))
+    type: (primitive_type
+      (string_type (upper_bound_specifier) (integer)))
     name: (identifier)
     default: (field_default
       (value (primitive_value (string)))))
   message: (field
-    type: (primitive_type (string_type (integer)))
+    type: (primitive_type
+      (string_type (upper_bound_specifier) (integer)))
     name: (identifier)
     default: (field_default
       (value (primitive_value (string)))))
   message: (field
-    type: (primitive_type (string_type (integer)))
+    type: (primitive_type
+      (string_type (upper_bound_specifier) (integer)))
     name: (identifier)
     default: (field_default
       (value (primitive_value (string)))))
   message: (field
-    type: (primitive_type (string_type (integer)))
+    type: (primitive_type
+      (string_type (upper_bound_specifier) (integer)))
     name: (identifier)
     default: (field_default
       (value (primitive_value (string)))))
   message: (field
-    type: (primitive_type (string_type (integer)))
+    type: (primitive_type
+      (string_type (upper_bound_specifier) (integer)))
     name: (identifier)
     default: (field_default
       (value (primitive_value (string)))))
@@ -361,7 +367,7 @@ wstring[] unbounded_sequence_of_wstrings
     name: (identifier))
   message: (field
     type: (primitive_type (string_type))
-    type: (array (integer))
+    type: (array (upper_bound_specifier) (integer))
     name: (identifier))
   message: (field
     type: (primitive_type (string_type))

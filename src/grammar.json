@@ -312,8 +312,8 @@
               "type": "SEQ",
               "members": [
                 {
-                  "type": "STRING",
-                  "value": "<="
+                  "type": "SYMBOL",
+                  "name": "upper_bound_specifier"
                 },
                 {
                   "type": "SYMBOL",
@@ -345,8 +345,8 @@
                   "type": "CHOICE",
                   "members": [
                     {
-                      "type": "STRING",
-                      "value": "<="
+                      "type": "SYMBOL",
+                      "name": "upper_bound_specifier"
                     },
                     {
                       "type": "BLANK"
@@ -369,6 +369,10 @@
           "value": "]"
         }
       ]
+    },
+    "upper_bound_specifier": {
+      "type": "STRING",
+      "value": "<="
     },
     "comment": {
       "type": "SEQ",
