@@ -1,31 +1,69 @@
 repositories:
-  examples/common_interfaces:
+  examples/astuff_sensor_msgs:
     type: git
-    url: https://github.com/ros2/common_interfaces
-  examples/rcl_interfaces:
+    url: https://github.com/astuff/astuff_sensor_msgs.git
+    version: master
+  examples/automotive_autonomy_msgs:
     type: git
-    url: https://github.com/ros2/rcl_interfaces
-  examples/test_interface_files:
-    type: git
-    url: https://github.com/ros2/test_interface_files
-  examples/ros_gz:
-    type: git
-    url: https://github.com/gazebosim/ros_gz
+    url: https://github.com/astuff/automotive_autonomy_msgs.git
+    version: master
   examples/autoware_msgs:
     type: git
-    url: https://github.com/autowarefoundation/autoware_msgs
-  examples/simulation_interfaces:
+    url: https://github.com/autowarefoundation/autoware_msgs.git
+    version: main
+  examples/common_interfaces:
     type: git
-    url: https://github.com/ros-simulation/simulation_interfaces
-  examples/rmf_internal_msgs:
+    url: https://github.com/ros2/common_interfaces.git
+    version: rolling
+  examples/control_msgs:
     type: git
-    url: https://github.com/open-rmf/rmf_internal_msgs
-  examples/tuw_msgs:
+    url: https://github.com/ros-controls/control_msgs.git
+    version: master
+  examples/marine_msgs:
     type: git
-    url: https://github.com/tuw-robotics/tuw_msgs
-  examples/mavros:
+    url: https://github.com/apl-ocean-engineering/marine_msgs.git
+    version: ros2
+  examples/marker_msgs:
     type: git
-    url: https://github.com/mavlink/mavros
+    url: https://github.com/tuw-robotics/marker_msgs.git
+    version: ros2
   examples/marti_messages:
     type: git
-    url: https://github.com/swri-robotics/marti_messages
+    url: https://github.com/swri-robotics/marti_messages.git
+    version: ros2-devel
+  examples/mavros:
+    type: git
+    url: https://github.com/mavlink/mavros.git
+    version: ros2
+  examples/moveit_msgs:
+    type: git
+    url: https://github.com/moveit/moveit_msgs.git
+    version: ros2
+  examples/object_recognition_msgs:
+    type: git
+    url: https://github.com/wg-perception/object_recognition_msgs.git
+    version: ros2
+  examples/rcl_interfaces:
+    type: git
+    url: https://github.com/ros2/rcl_interfaces.git
+    version: rolling
+  examples/rmf_internal_msgs:
+    type: git
+    url: https://github.com/open-rmf/rmf_internal_msgs.git
+    version: main
+  examples/ros_gz:
+    type: git
+    url: https://github.com/gazebosim/ros_gz.git
+    version: ros2
+  examples/simulation_interfaces:
+    type: git
+    url: https://github.com/ros-simulation/simulation_interfaces.git
+    version: main
+  examples/test_interface_files:
+    type: git
+    url: https://github.com/ros2/test_interface_files.git
+    version: rolling
+  examples/tuw_msgs:
+    type: git
+    url: https://github.com/tuw-robotics/tuw_msgs.git
+    version: ros2

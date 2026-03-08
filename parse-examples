@@ -2,8 +2,24 @@
 
 interfaces=$(find examples/ -type f -name '*.msg' -o -name '*.srv' -o -name '*.action')
 
+total=$((0))
+error=$((0))
+
+if ! which tree-sitter >/dev/null; then
+	echo -e "\033[1;31m[ERROR]\033[0m tree-sitter not installed!"
+	exit 1
+fi
+
 for interface in $interfaces; do
 	if ! tree-sitter parse "$interface" >/dev/null; then
 		echo "ERROR in: $interface"
+		((error++))
 	fi
+	((total++))
 done
+
+if [[ $error ]]; then
+	echo -e "\033[1;31m[FAILED]\033[0m Failed $error of $total examples"
+else
+	echo -e "\033[1;32m[SUCCESS]\033[0m All $total examples succeeded"
+fi
