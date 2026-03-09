@@ -11,30 +11,29 @@ export default grammar({
   name: "ros_interface",
 
   extras: $ => [
-    /\s/,
-    $.comment
+    $.comment,
+    /\s+/
   ],
 
   rules: {
-    // TODO: add the actual grammar rules
     source_file: $ => choice(
-      field('message', repeat($._statement)),
+      field('message', seq(repeat(seq($._statement, $._newline)), optional($._statement))),
       $.service,
       $.action,
     ),
 
     service: $ => seq(
-      field('request', repeat($._statement)),
+      field('request', repeat(seq($._statement, $._newline))),
       $.separator,
-      field('response', repeat($._statement)),
+      field('response', seq(repeat(seq($._statement, $._newline)), optional($._statement))),
     ),
 
     action: $ => seq(
-      field('goal', repeat($._statement)),
+      field('goal', repeat(seq($._statement, $._newline))),
       $.separator,
-      field('result', repeat($._statement)),
+      field('result', repeat(seq($._statement, $._newline))),
       $.separator,
-      field('feedback', repeat($._statement)),
+      field('feedback', seq(repeat(seq($._statement, $._newline)), optional($._statement))),
     ),
 
     _statement: $ => choice($.constant, $.field),
@@ -42,26 +41,31 @@ export default grammar({
     separator: $ => '---',
 
 
-    // TODO: DOC COMMENTS?
     // TODO: @OPTIONAL
-    field: $ => seq(
-      field('type', $._type),
+    field: $ => choice($._scalar_field, $._array_field),
+
+    _scalar_field: $ => seq(
+      field('type', $._base_type),
       field('name', $.identifier),
-      optional(field('default', $.field_default)),
+      optional(field('default', $._primitive_value)),
+    ),
+
+    _array_field: $ => seq(
+      field('type', seq($._base_type, $.array)),
+      field('name', $.identifier),
+      optional(field('default', $.array_value)),
     ),
 
     constant: $ => seq(
       field('type', $.primitive_type),
       field('name', $.const_identifier),
       '=',
-      field('value', $.primitive_value),
+      field('value', $._primitive_value),
     ),
 
     identifier: $ => /[a-z](?:[a-z0-9_]?[a-z0-9]+)*/,
 
     const_identifier: $ => /[A-Z](?:[A-Z0-9_]?[A-Z0-9]+)*/,
-
-    field_default: $ => $.value,
 
     _type: $ => seq($._base_type, optional($.array)),
 
@@ -99,17 +103,9 @@ export default grammar({
       /.*/,
     ),
 
-    value: $ => choice(
-      $.primitive_value,
-      $.array_value,
-    ),
+    _primitive_value: $ => choice($._simple_primitive_value, $.string),
 
-    primitive_value: $ => choice($.integer, $.string, $.float, $.bool),
-
-    string: $ => choice(
-      /"(?:[^"]|\\")*"/,
-      /'(?:[^']|\\')*'/,
-    ),
+    _simple_primitive_value: $ => choice($.integer, $.float, $.bool),
 
     integer: $ => choice($._decimal_integer, $._binary_integer, $._hexadecimal_integer, $._octal_integer),
     _decimal_integer: $ => /[+-]?[0-9_]+/,
@@ -129,6 +125,36 @@ export default grammar({
       'false',
     ),
 
-    array_value: $ => seq('[', optional(seq(repeat(seq($.primitive_value, ',')), $.primitive_value)), ']')
+    _array_content_value: $ => choice(
+      $._simple_primitive_value,
+      $.array_string
+    ),
+
+    array_string: $ => choice(
+      $._quoted_string,
+      /(?:[^\s"',\]#]|\\"|\\')(?:[^\r\n"',\]#]|\\"|\\')*/,
+    ),
+
+    array_value: $ => seq(
+      '[',
+      optional(seq(
+        repeat(seq($._array_content_value, ',', $._whitespace)),
+        $._array_content_value
+      )),
+      ']'
+    ),
+
+    string: $ => choice(
+      $._quoted_string,
+      /(?:[^\s"'#]|\\"|\\')(?:[^\r\n"'#]|\\"|\\')*/,
+    ),
+
+    _quoted_string: $ => choice(
+      /"(?:[^"]|\\")*"/,
+      /'(?:[^']|\\')*'/,
+    ),
+
+    _whitespace: $ => /[ \t]+/,
+    _newline: $ => /(\r?\n)/
   }
 });

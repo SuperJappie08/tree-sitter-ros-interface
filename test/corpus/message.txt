@@ -125,115 +125,101 @@ int32 alignment_check
   (field
     (primitive_type) (array (integer))
     (identifier)
-    (field_default
-        (value (array_value
-          (primitive_value (bool))
-          (primitive_value (bool))
-          (primitive_value (bool))))))
+    (array_value
+      (bool)
+      (bool)
+      (bool)))
   (field
     (primitive_type) (array (integer))
     (identifier)
-    (field_default
-        (value (array_value
-          (primitive_value (integer))
-          (primitive_value (integer))
-          (primitive_value (integer))))))
+    (array_value
+      (integer)
+      (integer)
+      (integer)))
   (field
     (primitive_type) (array (integer))
     (identifier)
-    (field_default
-        (value (array_value
-          (primitive_value (integer))
-          (primitive_value (integer))
-          (primitive_value (integer))))))
+    (array_value
+      (integer)
+      (integer)
+      (integer)))
   (field
     (primitive_type) (array (integer))
     (identifier)
-    (field_default
-        (value (array_value
-          (primitive_value (float))
-          (primitive_value (float))
-          (primitive_value (float))))))
+    (array_value
+      (float)
+      (float)
+      (float)))
   (field
     (primitive_type) (array (integer))
     (identifier)
-    (field_default
-        (value (array_value
-          (primitive_value (float))
-          (primitive_value (float))
-          (primitive_value (float))))))
+    (array_value
+      (float)
+      (float)
+      (float)))
   (field
     (primitive_type) (array (integer))
     (identifier)
-    (field_default
-        (value (array_value
-          (primitive_value (integer))
-          (primitive_value (integer))
-          (primitive_value (integer))))))
+    (array_value
+      (integer)
+      (integer)
+      (integer)))
   (field
     (primitive_type) (array (integer))
     (identifier)
-    (field_default
-        (value (array_value
-          (primitive_value (integer))
-          (primitive_value (integer))
-          (primitive_value (integer))))))
+    (array_value
+      (integer)
+      (integer)
+      (integer)))
   (field
     (primitive_type) (array (integer))
     (identifier)
-    (field_default
-        (value (array_value
-          (primitive_value (integer))
-          (primitive_value (integer))
-          (primitive_value (integer))))))
+    (array_value
+      (integer)
+      (integer)
+      (integer)))
   (field
     (primitive_type) (array (integer))
     (identifier)
-    (field_default
-        (value (array_value
-          (primitive_value (integer))
-          (primitive_value (integer))
-          (primitive_value (integer))))))
+    (array_value
+      (integer)
+      (integer)
+      (integer)))
   (field
     (primitive_type) (array (integer))
     (identifier)
-    (field_default
-        (value (array_value
-          (primitive_value (integer))
-          (primitive_value (integer))
-          (primitive_value (integer))))))
+    (array_value
+      (integer)
+      (integer)
+      (integer)))
   (field
     (primitive_type) (array (integer))
     (identifier)
-    (field_default
-        (value (array_value
-          (primitive_value (integer))
-          (primitive_value (integer))
-          (primitive_value (integer))))))
+    (array_value
+      (integer)
+      (integer)
+      (integer)))
   (field
     (primitive_type) (array (integer))
     (identifier)
-    (field_default
-        (value (array_value
-          (primitive_value (integer))
-          (primitive_value (integer))
-          (primitive_value (integer))))))
+    (array_value
+      (integer)
+      (integer)
+      (integer)))
   (field
     (primitive_type) (array (integer))
     (identifier)
-    (field_default
-        (value (array_value
-          (primitive_value (integer))
-          (primitive_value (integer))
-          (primitive_value (integer))))))
+    (array_value
+      (integer)
+      (integer)
+      (integer)))
   (field
     (primitive_type (string_type)) (array (integer))
     (identifier)
-    (field_default
-        (value (array_value
-          (primitive_value (string))
-          (primitive_value (string))
-          (primitive_value (string))))))
+    (array_value
+      (array_string)
+      (array_string)
+      (array_string)))
   (comment)
   (field (primitive_type) (identifier)))
 
@@ -247,7 +233,10 @@ string string_value_default1 "Hello world!"
 string string_value_default2 "Hello'world!"
 string string_value_default3 'Hello"world!'
 string string_value_default4 'Hello\'world!'
+string string_value_default4b HELLO_WOLRD
 string string_value_default5 "Hello\"world!"
+string string_value_default6 "Hello\"world!" # Here is comment
+string string_value_default7 HELLO_WOLRD # Here is comment
 string STRING_CONST="Hello world!"
 string<=22 bounded_string_value
 string<=22 bounded_string_value_default1 "Hello world!"
@@ -279,32 +268,41 @@ wstring[] unbounded_sequence_of_wstrings
   message: (field
     type: (primitive_type (string_type))
     name: (identifier)
-    default: (field_default
-      (value (primitive_value (string)))))
+    default: (string))
   message: (field
     type: (primitive_type (string_type))
     name: (identifier)
-    default: (field_default
-      (value (primitive_value (string)))))
+    default: (string))
   message: (field
     type: (primitive_type (string_type))
     name: (identifier)
-    default: (field_default
-      (value (primitive_value (string)))))
+    default: (string))
   message: (field
     type: (primitive_type (string_type))
     name: (identifier)
-    default: (field_default
-      (value (primitive_value (string)))))
+    default: (string))
   message: (field
     type: (primitive_type (string_type))
     name: (identifier)
-    default: (field_default
-      (value (primitive_value (string)))))
+    default: (string))
+  message: (field
+    type: (primitive_type (string_type))
+    name: (identifier)
+    default: (string))
+  message: (field
+    type: (primitive_type (string_type))
+    name: (identifier)
+    default: (string))
+  (comment)
+  message: (field
+    type: (primitive_type (string_type))
+    name: (identifier)
+    default: (string))
+  (comment)
   message: (constant
     type: (primitive_type (string_type))
     name: (const_identifier)
-    value: (primitive_value (string)))
+    value: (string))
   message: (field
     type: (primitive_type
       (string_type (upper_bound_specifier) (integer)))
@@ -313,32 +311,27 @@ wstring[] unbounded_sequence_of_wstrings
     type: (primitive_type
       (string_type (upper_bound_specifier) (integer)))
     name: (identifier)
-    default: (field_default
-      (value (primitive_value (string)))))
+    default: (string))
   message: (field
     type: (primitive_type
       (string_type (upper_bound_specifier) (integer)))
     name: (identifier)
-    default: (field_default
-      (value (primitive_value (string)))))
+    default: (string))
   message: (field
     type: (primitive_type
       (string_type (upper_bound_specifier) (integer)))
     name: (identifier)
-    default: (field_default
-      (value (primitive_value (string)))))
+    default: (string))
   message: (field
     type: (primitive_type
       (string_type (upper_bound_specifier) (integer)))
     name: (identifier)
-    default: (field_default
-      (value (primitive_value (string)))))
+    default: (string))
   message: (field
     type: (primitive_type
       (string_type (upper_bound_specifier) (integer)))
     name: (identifier)
-    default: (field_default
-      (value (primitive_value (string)))))
+    default: (string))
   (comment)
   message: (field
     type: (primitive_type (string_type))
@@ -346,18 +339,15 @@ wstring[] unbounded_sequence_of_wstrings
   message: (field
     type: (primitive_type (string_type))
     name: (identifier)
-    default: (field_default
-      (value (primitive_value (string)))))
+    default: (string))
   message: (field
     type: (primitive_type (string_type))
     name: (identifier)
-    default: (field_default
-      (value (primitive_value (string)))))
+    default: (string))
   message: (field
     type: (primitive_type (string_type))
     name: (identifier)
-    default: (field_default
-      (value (primitive_value (string)))))
+    default: (string))
   (comment)
   (comment)
   (comment)

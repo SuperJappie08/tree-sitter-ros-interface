@@ -21,7 +21,10 @@
 ;(external_custom_type) @type
 
 ; values
-(string) @string
+[
+  (string)
+  (array_string)
+] @string
 
 (bool) @constant.builtin
 

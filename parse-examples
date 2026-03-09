@@ -18,7 +18,7 @@ for interface in $interfaces; do
 	((total++))
 done
 
-if [[ $error ]]; then
+if ((error > 0)); then
 	echo -e "\033[1;31m[FAILED]\033[0m Failed $error of $total examples"
 else
 	echo -e "\033[1;32m[SUCCESS]\033[0m All $total examples succeeded"
