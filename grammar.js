@@ -59,7 +59,7 @@ export default grammar({
     constant: $ => seq(
       field('type', $.primitive_type),
       field('name', $.const_identifier),
-      '=',
+      $.constant_separator,
       field('value', $._primitive_value),
     ),
 
@@ -97,6 +97,8 @@ export default grammar({
     array: $ => seq('[', optional(seq(optional($.upper_bound_specifier), $.integer)), ']'),
 
     upper_bound_specifier: $ => '<=',
+
+    constant_separator: $ => '=',
 
     comment: $ => seq(
       '#',

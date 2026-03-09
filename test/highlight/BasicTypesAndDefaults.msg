@@ -68,3 +68,18 @@ string<=80 some_bound_string 'this is a string aswell' # Some comment
 #          ^ variable
 #                            ^ string
 #                                                      ^ comment
+
+wstring some_bound_string2 This is a string as well # Some comment
+# <- type.builtin
+#       ^ variable
+#                          ^ string
+#                                    ^ string
+#                                                   ^ comment
+
+string some_string_default3 "uint8\' [] # This is still string" # This should work
+# <- type.builtin
+#      ^ variable
+#                           ^ string
+#                                    ^ string
+#                                       ^ string
+#                                                               ^ comment

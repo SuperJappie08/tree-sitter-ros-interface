@@ -302,6 +302,7 @@ wstring[] unbounded_sequence_of_wstrings
   message: (constant
     type: (primitive_type (string_type))
     name: (const_identifier)
+    (constant_separator)
     value: (string))
   message: (field
     type: (primitive_type

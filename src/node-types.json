@@ -165,6 +165,16 @@
           }
         ]
       }
+    },
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "constant_separator",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -387,10 +397,6 @@
     "named": false
   },
   {
-    "type": "=",
-    "named": false
-  },
-  {
     "type": "False",
     "named": false
   },
@@ -420,6 +426,10 @@
   },
   {
     "type": "const_identifier",
+    "named": true
+  },
+  {
+    "type": "constant_separator",
     "named": true
   },
   {

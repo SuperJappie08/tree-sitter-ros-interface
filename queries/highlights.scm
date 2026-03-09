@@ -37,8 +37,12 @@
 
 (separator) @punctuation.delimiter
 
-; TOD: CHECK THIS IN STRING
-"[" @punctuation.bracket
-"]" @punctuation.bracket
+[
+  "["
+  "]"
+] @punctuation.bracket
 
-(upper_bound_specifier) @operator
+[
+  (upper_bound_specifier)
+  (constant_separator)
+] @operator

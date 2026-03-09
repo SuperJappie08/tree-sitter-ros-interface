@@ -341,8 +341,8 @@
           }
         },
         {
-          "type": "STRING",
-          "value": "="
+          "type": "SYMBOL",
+          "name": "constant_separator"
         },
         {
           "type": "FIELD",
@@ -533,6 +533,10 @@
     "upper_bound_specifier": {
       "type": "STRING",
       "value": "<="
+    },
+    "constant_separator": {
+      "type": "STRING",
+      "value": "="
     },
     "comment": {
       "type": "SEQ",
