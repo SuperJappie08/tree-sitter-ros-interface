@@ -35,9 +35,8 @@ bool doit
 
 ----------------------------------------------------------------------------+++
 (source_file (service
-  request: (field
-    type: (primitive_type)
-    name: (identifier))
+  (request
+    (field type: (primitive_type) name: (identifier)))
   (separator)))
 
 ============================================================================+++
@@ -50,12 +49,9 @@ SomeState data
 ----------------------------------------------------------------------------+++
 (source_file (service
   (separator)
-  response: (field
-    type: (primitive_type)
-    name: (identifier))
-  response: (field
-    type: (custom_type)
-    name: (identifier))))
+  (response
+    (field type: (primitive_type) name: (identifier))
+    (field type: (custom_type) name: (identifier)))))
 
 ============================================================================+++
 Empty Action (No Newline)
@@ -63,9 +59,7 @@ Empty Action (No Newline)
 ---
 ---
 ----------------------------------------------------------------------------+++
-(source_file (action
-  (separator)
-  (separator)))
+(source_file (action (separator) (separator)))
 
 ============================================================================+++
 Empty Action
@@ -74,9 +68,7 @@ Empty Action
 ---
 
 ----------------------------------------------------------------------------+++
-(source_file (action
-  (separator)
-  (separator)))
+(source_file (action (separator) (separator)))
 
 ============================================================================+++
 Empty Action Goal
@@ -92,20 +84,13 @@ float64 progress
 ----------------------------------------------------------------------------+++
 (source_file (action
   (separator)
-  result: (field
-    type: (primitive_type)
-    name: (identifier))
-  result: (field
-    (annotation)
-    type: (primitive_type (string_type))
-    name: (identifier))
-  result: (field
-    type: (primitive_type)
-    name: (identifier))
+  (result
+    (field type: (primitive_type) name: (identifier))
+    (field (annotation) type: (primitive_type (string_type)) name: (identifier))
+    (field type: (primitive_type) name: (identifier)))
   (separator)
-  feedback: (field
-    type: (primitive_type)
-    name: (identifier))))
+  (feedback
+    (field type: (primitive_type) name: (identifier)))))
 
 ============================================================================+++
 Empty Action Result
@@ -122,19 +107,19 @@ float64 progress
 (source_file
   (comment)
   (action
-    goal: (field
-      type: (primitive_type (string_type))
-      name: (identifier)
-      default: (string))
-    (comment)
-    goal: (field
-      type: (primitive_type (string_type))
-      name: (identifier))
+    (goal
+      (field
+        type: (primitive_type (string_type))
+        name: (identifier)
+        default: (string))
+      (comment)
+      (field
+        type: (primitive_type (string_type))
+        name: (identifier)))
     (separator)
     (separator)
-    feedback: (field
-      type: (primitive_type)
-      name: (identifier))))
+    (feedback
+      (field type: (primitive_type) name: (identifier)))))
 
 ============================================================================+++
 Empty Action Feedback
@@ -156,25 +141,20 @@ float64 distance
 (source_file
   (comment)
   (action
-    goal: (field
+  (goal
+    (field
       type: (primitive_type (string_type))
       name: (identifier)
       default: (string))
     (comment)
-    goal: (field
+    (field
       type: (primitive_type (string_type))
-      name: (identifier))
+      name: (identifier)))
     (separator)
-    result: (field
-      type: (primitive_type)
-      name: (identifier))
-    result: (field
-      (annotation)
-      type: (primitive_type (string_type))
-      name: (identifier))
-    result: (field
-      type: (primitive_type)
-      name: (identifier))
+  (result
+    (field type: (primitive_type) name: (identifier))
+    (field (annotation) type: (primitive_type (string_type)) name: (identifier))
+    (field type: (primitive_type) name: (identifier)))
   (separator))
   (comment)
   (comment))

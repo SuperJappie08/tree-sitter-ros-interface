@@ -20,45 +20,20 @@ uint64 uint64_value
 ----------------------------------------------------------------------------+++
 (source_file
   (comment)
-  message: (field
-    type: (primitive_type)
-    name: (identifier))
-  message: (field
-    type: (primitive_type)
-    name: (identifier))
-  message: (field
-    type: (primitive_type)
-    name: (identifier))
-  message: (field
-    type: (primitive_type)
-    name: (identifier))
-  message: (field
-    type: (primitive_type)
-    name: (identifier))
-  message: (field
-    type: (primitive_type)
-    name: (identifier))
-  message: (field
-    type: (primitive_type)
-    name: (identifier))
-  message: (field
-    type: (primitive_type)
-    name: (identifier))
-  message: (field
-    type: (primitive_type)
-    name: (identifier))
-  message: (field
-    type: (primitive_type)
-    name: (identifier))
-  message: (field
-    type: (primitive_type)
-    name: (identifier))
-  message: (field
-    type: (primitive_type)
-    name: (identifier))
-  message: (field
-    type: (primitive_type)
-    name: (identifier)))
+  (message
+    (field type: (primitive_type) name: (identifier))
+    (field type: (primitive_type) name: (identifier))
+    (field type: (primitive_type) name: (identifier))
+    (field type: (primitive_type) name: (identifier))
+    (field type: (primitive_type) name: (identifier))
+    (field type: (primitive_type) name: (identifier))
+    (field type: (primitive_type) name: (identifier))
+    (field type: (primitive_type) name: (identifier))
+    (field type: (primitive_type) name: (identifier))
+    (field type: (primitive_type) name: (identifier))
+    (field type: (primitive_type) name: (identifier))
+    (field type: (primitive_type) name: (identifier))
+    (field type: (primitive_type) name: (identifier))))
 
 ============================================================================+++
 Message with Arrays
@@ -105,123 +80,82 @@ int32 alignment_check
 (source_file
   (comment)
   (comment)
-  (field (primitive_type) (array (integer)) (identifier))
-  (field (primitive_type) (array (integer)) (identifier))
-  (field (primitive_type) (array (integer)) (identifier))
-  (field (primitive_type) (array (integer)) (identifier))
-  (field (primitive_type) (array (integer)) (identifier))
-  (field (primitive_type) (array (integer)) (identifier))
-  (field (primitive_type) (array (integer)) (identifier))
-  (field (primitive_type) (array (integer)) (identifier))
-  (field (primitive_type) (array (integer)) (identifier))
-  (field (primitive_type) (array (integer)) (identifier))
-  (field (primitive_type) (array (integer)) (identifier))
-  (field (primitive_type) (array (integer)) (identifier))
-  (field (primitive_type) (array (integer)) (identifier))
-  (field (primitive_type (string_type)) (array (integer)) (identifier))
-  (field (custom_type) (array (integer)) (identifier))
-  (field (custom_type) (array (integer)) (identifier))
-  (field (custom_type) (array (integer)) (identifier))
-  (field
-    (primitive_type) (array (integer))
-    (identifier)
-    (array_value
-      (bool)
-      (bool)
-      (bool)))
-  (field
-    (primitive_type) (array (integer))
-    (identifier)
-    (array_value
-      (integer)
-      (integer)
-      (integer)))
-  (field
-    (primitive_type) (array (integer))
-    (identifier)
-    (array_value
-      (integer)
-      (integer)
-      (integer)))
-  (field
-    (primitive_type) (array (integer))
-    (identifier)
-    (array_value
-      (float)
-      (float)
-      (float)))
-  (field
-    (primitive_type) (array (integer))
-    (identifier)
-    (array_value
-      (float)
-      (float)
-      (float)))
-  (field
-    (primitive_type) (array (integer))
-    (identifier)
-    (array_value
-      (integer)
-      (integer)
-      (integer)))
-  (field
-    (primitive_type) (array (integer))
-    (identifier)
-    (array_value
-      (integer)
-      (integer)
-      (integer)))
-  (field
-    (primitive_type) (array (integer))
-    (identifier)
-    (array_value
-      (integer)
-      (integer)
-      (integer)))
-  (field
-    (primitive_type) (array (integer))
-    (identifier)
-    (array_value
-      (integer)
-      (integer)
-      (integer)))
-  (field
-    (primitive_type) (array (integer))
-    (identifier)
-    (array_value
-      (integer)
-      (integer)
-      (integer)))
-  (field
-    (primitive_type) (array (integer))
-    (identifier)
-    (array_value
-      (integer)
-      (integer)
-      (integer)))
-  (field
-    (primitive_type) (array (integer))
-    (identifier)
-    (array_value
-      (integer)
-      (integer)
-      (integer)))
-  (field
-    (primitive_type) (array (integer))
-    (identifier)
-    (array_value
-      (integer)
-      (integer)
-      (integer)))
-  (field
-    (primitive_type (string_type)) (array (integer))
-    (identifier)
-    (array_value
-      (array_string)
-      (array_string)
-      (array_string)))
-  (comment)
-  (field (primitive_type) (identifier)))
+  (message
+    (field (primitive_type) (array (integer)) (identifier))
+    (field (primitive_type) (array (integer)) (identifier))
+    (field (primitive_type) (array (integer)) (identifier))
+    (field (primitive_type) (array (integer)) (identifier))
+    (field (primitive_type) (array (integer)) (identifier))
+    (field (primitive_type) (array (integer)) (identifier))
+    (field (primitive_type) (array (integer)) (identifier))
+    (field (primitive_type) (array (integer)) (identifier))
+    (field (primitive_type) (array (integer)) (identifier))
+    (field (primitive_type) (array (integer)) (identifier))
+    (field (primitive_type) (array (integer)) (identifier))
+    (field (primitive_type) (array (integer)) (identifier))
+    (field (primitive_type) (array (integer)) (identifier))
+    (field (primitive_type (string_type)) (array (integer)) (identifier))
+    (field (custom_type) (array (integer)) (identifier))
+    (field (custom_type) (array (integer)) (identifier))
+    (field (custom_type) (array (integer)) (identifier))
+    (field
+      (primitive_type) (array (integer))
+      (identifier)
+      (array_value (bool) (bool) (bool)))
+    (field
+      (primitive_type) (array (integer))
+      (identifier)
+      (array_value (integer) (integer) (integer)))
+    (field
+      (primitive_type) (array (integer))
+      (identifier)
+      (array_value (integer) (integer) (integer)))
+    (field
+      (primitive_type) (array (integer))
+      (identifier)
+      (array_value (float) (float) (float)))
+    (field
+      (primitive_type) (array (integer))
+      (identifier)
+      (array_value (float) (float) (float)))
+    (field
+      (primitive_type) (array (integer))
+      (identifier)
+      (array_value (integer) (integer) (integer)))
+    (field
+      (primitive_type) (array (integer))
+      (identifier)
+      (array_value (integer) (integer) (integer)))
+    (field
+      (primitive_type) (array (integer))
+      (identifier)
+      (array_value (integer) (integer) (integer)))
+    (field
+      (primitive_type) (array (integer))
+      (identifier)
+      (array_value (integer) (integer) (integer)))
+    (field
+      (primitive_type) (array (integer))
+      (identifier)
+      (array_value (integer) (integer) (integer)))
+    (field
+      (primitive_type) (array (integer))
+      (identifier)
+      (array_value (integer) (integer) (integer)))
+    (field
+      (primitive_type) (array (integer))
+      (identifier)
+      (array_value (integer) (integer) (integer)))
+    (field
+      (primitive_type) (array (integer))
+      (identifier)
+      (array_value (integer) (integer) (integer)))
+    (field
+      (primitive_type (string_type)) (array (integer))
+      (identifier)
+      (array_value (array_string) (array_string) (array_string)))
+    (comment)
+    (field (primitive_type) (identifier))))
 
 ============================================================================+++
 Parser Test Message
@@ -279,49 +213,50 @@ float32 multiline_optional
   ; Start
   (comment)
   (comment)
-  message: (field type: (primitive_type) name: (identifier))
-  message: (field type: (primitive_type) name: (identifier))
-  (comment)
-  (comment)
-  message: (field type: (primitive_type) name: (identifier))
-  (comment)
-  message: (field type: (primitive_type) name: (identifier))
-  message: (field type: (primitive_type) name: (identifier))
-  message: (field type: (primitive_type) name: (identifier))
-  message: (field type: (primitive_type) name: (identifier))
-  message: (field type: (primitive_type) name: (identifier))
-  message: (field type: (primitive_type) name: (identifier))
-  message: (field type: (primitive_type) name: (identifier))
-  message: (field type: (primitive_type) name: (identifier))
-  message: (field type: (primitive_type) name: (identifier))
-  message: (field type: (primitive_type) name: (identifier))
-  message: (field
-    (annotation)
-    type: (primitive_type)
-    name: (identifier))
-  message: (field
-    (annotation)
-    type: (primitive_type)
-    name: (identifier))
-  message: (field
-    (annotation)
-    type: (primitive_type)
-    name: (identifier)
-    default: (float))
-  message: (constant
-    (annotation)
-    type: (primitive_type)
-    name: (const_identifier)
-    (constant_separator)
-    value: (float))
-  message: (field
-    (annotation)
-    type: (primitive_type (string_type))
-    name: (identifier)
-    default: (string))
-  message: (constant
-    (annotation)
-    type: (primitive_type (string_type))
-    name: (const_identifier)
-    (constant_separator)
-    value: (string)))
+  (message
+    (field type: (primitive_type) name: (identifier))
+    (field type: (primitive_type) name: (identifier))
+    (comment)
+    (comment)
+    (field type: (primitive_type) name: (identifier))
+    (comment)
+    (field type: (primitive_type) name: (identifier))
+    (field type: (primitive_type) name: (identifier))
+    (field type: (primitive_type) name: (identifier))
+    (field type: (primitive_type) name: (identifier))
+    (field type: (primitive_type) name: (identifier))
+    (field type: (primitive_type) name: (identifier))
+    (field type: (primitive_type) name: (identifier))
+    (field type: (primitive_type) name: (identifier))
+    (field type: (primitive_type) name: (identifier))
+    (field type: (primitive_type) name: (identifier))
+    (field
+      (annotation)
+      type: (primitive_type)
+      name: (identifier))
+    (field
+      (annotation)
+      type: (primitive_type)
+      name: (identifier))
+    (field
+      (annotation)
+      type: (primitive_type)
+      name: (identifier)
+      default: (float))
+    (constant
+      (annotation)
+      type: (primitive_type)
+      name: (const_identifier)
+      (constant_separator)
+      value: (float))
+    (field
+      (annotation)
+      type: (primitive_type (string_type))
+      name: (identifier)
+      default: (string))
+    (constant
+      (annotation)
+      type: (primitive_type (string_type))
+      name: (const_identifier)
+      (constant_separator)
+      value: (string))))

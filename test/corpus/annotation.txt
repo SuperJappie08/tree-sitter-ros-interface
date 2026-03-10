@@ -10,18 +10,19 @@ string another_field
 ----------------------------------------------------------------------------+++
 
 (source_file
-  message: (field
-    type: (primitive_type (string_type))
-    name: (identifier))
-  message: (field
-    (annotation) (comment)
-    type: (primitive_type (string_type))
-    name: (identifier))
-  message: (field
-    (annotation)
-    type: (primitive_type)
-    name: (identifier)
-    default: (integer)))
+  (message
+    (field
+      type: (primitive_type (string_type))
+      name: (identifier))
+    (field
+      (annotation) (comment)
+      type: (primitive_type (string_type))
+      name: (identifier))
+    (field
+      (annotation)
+      type: (primitive_type)
+      name: (identifier)
+      default: (integer))))
 
 ============================================================================+++
 Faulty Annotation Before (Space after @)

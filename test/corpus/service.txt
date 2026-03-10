@@ -17,31 +17,27 @@ int32 SOME_RESPONSE_CONSTANT = 123
 (source_file
   (comment)
   (service
-    request: (constant
+  (request
+    (constant
       type: (primitive_type)
       name: (const_identifier)
       (constant_separator)
       value: (integer))
-    request: (field
-      type: (primitive_type)
-      name: (identifier))
-    request: (field
-      type: (primitive_type)
-      name: (identifier))
-    request: (field
+    (field type: (primitive_type) name: (identifier))
+    (field type: (primitive_type) name: (identifier))
+    (field
       (annotation)
       type: (primitive_type)
       name: (identifier)
-      default: (integer))
+      default: (integer)))
     (separator)
-    response: (field
-      type: (primitive_type)
-      name: (identifier))
-    response: (constant
-      type: (primitive_type)
-      name: (const_identifier)
-      (constant_separator)
-      value: (integer))))
+    (response
+      (field type: (primitive_type) name: (identifier))
+      (constant
+        type: (primitive_type)
+        name: (const_identifier)
+        (constant_separator)
+        value: (integer)))))
 
 ============================================================================+++
 Parser Test Service
@@ -100,25 +96,27 @@ bool ok
   (comment)
   (comment)
   (service
-    request: (field type: (primitive_type) name: (identifier))
-    request: (field type: (primitive_type) name: (identifier))
-    (comment)
-    (comment)
-    request: (field type: (primitive_type) name: (identifier))
-    (comment)
-    request: (field type: (primitive_type) name: (identifier))
-    request: (field type: (primitive_type) name: (identifier))
-    request: (field type: (primitive_type) name: (identifier))
-    request: (field type: (primitive_type) name: (identifier))
-    request: (field type: (primitive_type) name: (identifier))
-    request: (field type: (primitive_type) name: (identifier))
-    request: (field type: (primitive_type) name: (identifier))
-    request: (field type: (primitive_type) name: (identifier))
-    request: (field type: (primitive_type) name: (identifier))
-    request: (field type: (primitive_type) name: (identifier))
-    request: (field type: (primitive_type (string_type)) name: (identifier))
+    (request
+      (field type: (primitive_type) name: (identifier))
+      (field type: (primitive_type) name: (identifier))
+      (comment)
+      (comment)
+      (field type: (primitive_type) name: (identifier))
+      (comment)
+      (field type: (primitive_type) name: (identifier))
+      (field type: (primitive_type) name: (identifier))
+      (field type: (primitive_type) name: (identifier))
+      (field type: (primitive_type) name: (identifier))
+      (field type: (primitive_type) name: (identifier))
+      (field type: (primitive_type) name: (identifier))
+      (field type: (primitive_type) name: (identifier))
+      (field type: (primitive_type) name: (identifier))
+      (field type: (primitive_type) name: (identifier))
+      (field type: (primitive_type) name: (identifier))
+      (field type: (primitive_type (string_type)) name: (identifier)))
     (separator)
     (comment)
     (comment)
-    response: (field type: (primitive_type) name: (identifier))
-    response: (field (annotation) type: (primitive_type) name: (identifier))))
+    (response
+      (field type: (primitive_type) name: (identifier))
+      (field (annotation) type: (primitive_type) name: (identifier)))))

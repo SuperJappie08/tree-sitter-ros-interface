@@ -21,23 +21,23 @@ export default grammar({
 
   rules: {
     source_file: $ => choice(
-      field('message', seq(repeat(seq($._statement, $._newline)), optional($._statement))),
+      alias(seq(repeat(seq($._statement, $._newline)), optional($._statement)), $.message),
       $.service,
       $.action,
     ),
 
     service: $ => seq(
-      field('request', repeat(seq($._statement, $._newline))),
+      alias(repeat(seq($._statement, $._newline)), $.request),
       $.separator,
-      field('response', seq(repeat(seq($._statement, $._newline)), optional($._statement))),
+      alias(seq(repeat(seq($._statement, $._newline)), optional($._statement)), $.response),
     ),
 
     action: $ => seq(
-      field('goal', repeat(seq($._statement, $._newline))),
+      alias(repeat(seq($._statement, $._newline)), $.goal),
       $.separator,
-      field('result', repeat(seq($._statement, $._newline))),
+      alias(repeat(seq($._statement, $._newline)), $.result),
       $.separator,
-      field('feedback', seq(repeat(seq($._statement, $._newline)), optional($._statement))),
+      alias(seq(repeat(seq($._statement, $._newline)), optional($._statement)), $.feedback),
     ),
 
     _statement: $ => choice($.constant, $.field),
@@ -155,12 +155,18 @@ export default grammar({
 
     array_string: $ => choice(
       $._quoted_string,
-      /(?:[^\s"',\]#]|\\"|\\')(?:[^\r\n"',\]#]|\\"|\\')*/,
+      // Short string
+      /(?:[^\s"',\]#]|\\"|\\'){1,2}/,
+      // Long strings
+      /(?:[^\s"',\]#]|\\"|\\')(?:[^\r\n"',\]#]|\\"|\\')+(?:[^\s"',\]#]|\\"|\\')/,
     ),
 
     string: $ => choice(
       $._quoted_string,
-      /(?:[^\s"'#]|\\"|\\')(?:[^\r\n"'#]|\\"|\\')*/,
+      // Short string
+      /(?:[^\s"'#]|\\"|\\'){1,2}/,
+      // Long strings
+      /(?:[^\s"'#]|\\"|\\')(?:[^\r\n"'#]|\\"|\\')+(?:[^\s"'#]|\\"|\\')/,
     ),
 
     _quoted_string: $ => choice(

@@ -62,33 +62,345 @@ int32[] sequence
   (comment)
   (comment)
   (action
-    goal: (field type: (primitive_type) name: (identifier))
-    (comment)
-    goal: (field type: (primitive_type) name: (identifier))
-    (comment)
-    goal: (field type: (primitive_type) name: (identifier))
-    (comment)
-    goal: (field type: (primitive_type) name: (identifier))
-    goal: (field type: (primitive_type) name: (identifier))
-    goal: (field type: (primitive_type) name: (identifier))
-    goal: (field type: (primitive_type) name: (identifier))
-    goal: (field type: (primitive_type) name: (identifier))
-    goal: (field type: (primitive_type) name: (identifier))
-    goal: (field type: (primitive_type) name: (identifier))
-    goal: (field type: (primitive_type) name: (identifier))
-    goal: (field type: (primitive_type) name: (identifier))
-    goal: (field type: (primitive_type) name: (identifier))
-    goal: (field type: (primitive_type (string_type)) name: (identifier))
+    (goal
+      (field type: (primitive_type) name: (identifier))
+      (comment)
+      (field type: (primitive_type) name: (identifier))
+      (comment)
+      (field type: (primitive_type) name: (identifier))
+      (comment)
+      (field type: (primitive_type) name: (identifier))
+      (field type: (primitive_type) name: (identifier))
+      (field type: (primitive_type) name: (identifier))
+      (field type: (primitive_type) name: (identifier))
+      (field type: (primitive_type) name: (identifier))
+      (field type: (primitive_type) name: (identifier))
+      (field type: (primitive_type) name: (identifier))
+      (field type: (primitive_type) name: (identifier))
+      (field type: (primitive_type) name: (identifier))
+      (field type: (primitive_type) name: (identifier))
+      (field type: (primitive_type (string_type)) name: (identifier)))
     (separator)
     (comment)
     (comment)
-    result: (field type: (primitive_type) name: (identifier))
-    result: (field (annotation) type: (primitive_type) name: (identifier))
+    (result
+      (field type: (primitive_type) name: (identifier))
+      (field (annotation) type: (primitive_type) name: (identifier)))
     (separator)
     (comment)
     (comment)
     (comment)
-    feedback: (field
+    (feedback
+      (field type: (primitive_type) type: (array) name: (identifier)))))
+
+============================================================================+++
+Action with a lot of Integers
+============================================================================+++
+
+int16 number
+
+int16 decimal_field 10
+int16 decimal_field_neg -10
+
+# Binary
+int16 binary_field 0b1010
+int16 binary_field_neg -0b1010
+int16 binary_field_alt 0B1010
+int16 binary_field_alt_neg -0B1010
+
+# Hexadecimal
+int16 hexadecimal_field 0xA
+int16 hexadecimal_field_neg -0xA
+int16 hexadecimal_field_alt1 0Xa
+int16 hexadecimal_field_alt2 0xa
+int16 hexadecimal_field_alt3 0XA
+int16 hexadecimal_field_alt1_neg -0Xa
+int16 hexadecimal_field_alt2_neg -0xa
+int16 hexadecimal_field_alt3_neg -0XA
+
+# Octal
+int16 octal_field 0o12
+int16 octal_field_neg -0o12
+int16 octal_field_alt 0O12
+int16 octal_field_alt_neg -0O12
+
+---
+int16 response
+
+int16 DECIMAL_CONST = 10
+int16 DECIMAL_CONST_NEG = -10
+
+# Binary
+int16 BINARY_CONST = 0b1010
+int16 BINARY_CONST_NEG = -0b1010
+int16 BINARY_CONST_ALT = 0B1010
+int16 BINARY_CONST_ALT_NEG = -0B1010
+
+# Hexadecimal
+int16 HEXADECIMAL_CONST = 0xA
+int16 HEXADECIMAL_CONST_NEG = -0xA
+int16 HEXADECIMAL_CONST_ALT1 = 0Xa
+int16 HEXADECIMAL_CONST_ALT2 = 0xa
+int16 HEXADECIMAL_CONST_ALT3 = 0XA
+int16 HEXADECIMAL_CONST_ALT1_NEG = -0Xa
+int16 HEXADECIMAL_CONST_ALT2_NEG = -0xa
+int16 HEXADECIMAL_CONST_ALT3_NEG = -0XA
+
+# Octal
+int16 OCTAL_CONST = 0o12
+int16 OCTAL_CONST_NEG = -0o12
+int16 OCTAL_CONST_ALT = 0O12
+int16 OCTAL_CONST_ALT_NEG = -0O12
+---
+int16[] decimal_field [10, 10]
+int16[] decimal_field_neg [-10, -10]
+
+# Binary
+int16[] binary_field [0b1010, 0b1010]
+int16[] binary_field_neg [-0b1010, -0b1010]
+int16[] binary_field_alt [0B1010, 0B1010]
+int16[] binary_field_alt_neg [-0B1010, -0B1010]
+
+# Hexadecimal
+int16[] hexadecimal_field [0xA, 0xA]
+int16[] hexadecimal_field_neg [-0xA, -0xA]
+int16[] hexadecimal_field_alt1 [0Xa, 0Xa]
+int16[] hexadecimal_field_alt2 [0xa, 0xa]
+int16[] hexadecimal_field_alt3 [0XA, 0XA]
+int16[] hexadecimal_field_alt1_neg [-0Xa, -0Xa]
+int16[] hexadecimal_field_alt2_neg [-0xa, -0xa]
+int16[] hexadecimal_field_alt3_neg [-0XA, -0XA]
+
+# Octal
+int16[] octal_field [0o12, 0o12]
+int16[] octal_field_neg [-0o12, -0o12]
+int16[] octal_field_alt [0O12, 0O12]
+int16[] octal_field_alt_neg [-0O12, -0O12]
+
+----------------------------------------------------------------------------+++
+(source_file (action
+  (goal
+    (field type: (primitive_type) name: (identifier))
+    (field type: (primitive_type) name: (identifier) default: (integer))
+    (field type: (primitive_type) name: (identifier) default: (integer))
+    ; Binary
+    (comment)
+    (field type: (primitive_type) name: (identifier) default: (integer))
+    (field type: (primitive_type) name: (identifier) default: (integer))
+    (field type: (primitive_type) name: (identifier) default: (integer))
+    (field type: (primitive_type) name: (identifier) default: (integer))
+    ; Hexadecimal
+    (comment)
+    (field type: (primitive_type) name: (identifier) default: (integer))
+    (field type: (primitive_type) name: (identifier) default: (integer))
+    (field type: (primitive_type) name: (identifier) default: (integer))
+    (field type: (primitive_type) name: (identifier) default: (integer))
+    (field type: (primitive_type) name: (identifier) default: (integer))
+    (field type: (primitive_type) name: (identifier) default: (integer))
+    (field type: (primitive_type) name: (identifier) default: (integer))
+    (field type: (primitive_type) name: (identifier) default: (integer))
+    ; Binary
+    (comment)
+    (field type: (primitive_type) name: (identifier) default: (integer))
+    (field type: (primitive_type) name: (identifier) default: (integer))
+    (field type: (primitive_type) name: (identifier) default: (integer))
+    (field type: (primitive_type) name: (identifier) default: (integer)))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Response ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  (separator)
+  (result
+    (field type: (primitive_type) name: (identifier))
+    (constant
+      type: (primitive_type)
+      name: (const_identifier)
+      (constant_separator)
+      value: (integer))
+    (constant
+      type: (primitive_type)
+      name: (const_identifier)
+      (constant_separator)
+      value: (integer))
+    ; Binary
+    (comment)
+    (constant
+      type: (primitive_type)
+      name: (const_identifier)
+      (constant_separator)
+      value: (integer))
+    (constant
+      type: (primitive_type)
+      name: (const_identifier)
+      (constant_separator)
+      value: (integer))
+    (constant
+      type: (primitive_type)
+      name: (const_identifier)
+      (constant_separator)
+      value: (integer))
+    (constant
+      type: (primitive_type)
+      name: (const_identifier)
+      (constant_separator)
+      value: (integer))
+    ; Hexadecimal
+    (comment)
+    (constant
+      type: (primitive_type)
+      name: (const_identifier)
+      (constant_separator)
+      value: (integer))
+    (constant
+      type: (primitive_type)
+      name: (const_identifier)
+      (constant_separator)
+      value: (integer))
+    (constant
+      type: (primitive_type)
+      name: (const_identifier)
+      (constant_separator)
+      value: (integer))
+    (constant
+      type: (primitive_type)
+      name: (const_identifier)
+      (constant_separator)
+      value: (integer))
+    (constant
+      type: (primitive_type)
+      name: (const_identifier)
+      (constant_separator)
+      value: (integer))
+    (constant
+      type: (primitive_type)
+      name: (const_identifier)
+      (constant_separator)
+      value: (integer))
+    (constant
+      type: (primitive_type)
+      name: (const_identifier)
+      (constant_separator)
+      value: (integer))
+    (constant
+      type: (primitive_type)
+      name: (const_identifier)
+      (constant_separator)
+      value: (integer))
+    ; Binary
+    (comment)
+    (constant
+      type: (primitive_type)
+      name: (const_identifier)
+      (constant_separator)
+      value: (integer))
+    (constant
+      type: (primitive_type)
+      name: (const_identifier)
+      (constant_separator)
+      value: (integer))
+    (constant
+      type: (primitive_type)
+      name: (const_identifier)
+      (constant_separator)
+      value: (integer))
+    (constant
+      type: (primitive_type)
+      name: (const_identifier)
+      (constant_separator)
+      value: (integer)))
+  (separator)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Feedback ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    (feedback
+    (field
       type: (primitive_type)
       type: (array)
-      name: (identifier))))
+      name: (identifier)
+      default: (array_value (integer) (integer)))
+    (field
+      type: (primitive_type)
+      type: (array)
+      name: (identifier)
+      default: (array_value (integer) (integer)))
+    ; Binary
+    (comment)
+    (field
+      type: (primitive_type)
+      type: (array)
+      name: (identifier)
+      default: (array_value (integer) (integer)))
+    (field
+      type: (primitive_type)
+      type: (array)
+      name: (identifier)
+      default: (array_value (integer) (integer)))
+    (field
+      type: (primitive_type)
+      type: (array)
+      name: (identifier)
+      default: (array_value (integer) (integer)))
+    (field
+      type: (primitive_type)
+      type: (array)
+      name: (identifier)
+      default: (array_value (integer) (integer)))
+    ; Hexadecimal
+    (comment)
+    (field
+      type: (primitive_type)
+      type: (array)
+      name: (identifier)
+      default: (array_value (integer) (integer)))
+    (field
+      type: (primitive_type)
+      type: (array)
+      name: (identifier)
+      default: (array_value (integer) (integer)))
+    (field
+      type: (primitive_type)
+      type: (array)
+      name: (identifier)
+      default: (array_value (integer) (integer)))
+    (field
+      type: (primitive_type)
+      type: (array)
+      name: (identifier)
+      default: (array_value (integer) (integer)))
+    (field
+      type: (primitive_type)
+      type: (array)
+      name: (identifier)
+      default: (array_value (integer) (integer)))
+    (field
+      type: (primitive_type)
+      type: (array)
+      name: (identifier)
+      default: (array_value (integer) (integer)))
+    (field
+      type: (primitive_type)
+      type: (array)
+      name: (identifier)
+      default: (array_value (integer) (integer)))
+    (field
+      type: (primitive_type)
+      type: (array)
+      name: (identifier)
+      default: (array_value (integer) (integer)))
+    ; Binary
+    (comment)
+    (field
+      type: (primitive_type)
+      type: (array)
+      name: (identifier)
+      default: (array_value (integer) (integer)))
+    (field
+      type: (primitive_type)
+      type: (array)
+      name: (identifier)
+      default: (array_value (integer) (integer)))
+    (field
+      type: (primitive_type)
+      type: (array)
+      name: (identifier)
+      default: (array_value (integer) (integer)))
+    (field
+      type: (primitive_type)
+      type: (array)
+      name: (identifier)
+      default: (array_value (integer) (integer))))))

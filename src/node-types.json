@@ -2,54 +2,23 @@
   {
     "type": "action",
     "named": true,
-    "fields": {
-      "feedback": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "constant",
-            "named": true
-          },
-          {
-            "type": "field",
-            "named": true
-          }
-        ]
-      },
-      "goal": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "constant",
-            "named": true
-          },
-          {
-            "type": "field",
-            "named": true
-          }
-        ]
-      },
-      "result": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "constant",
-            "named": true
-          },
-          {
-            "type": "field",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "feedback",
+          "named": true
+        },
+        {
+          "type": "goal",
+          "named": true
+        },
+        {
+          "type": "result",
+          "named": true
+        },
         {
           "type": "separator",
           "named": true
@@ -206,6 +175,25 @@
     }
   },
   {
+    "type": "feedback",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "constant",
+          "named": true
+        },
+        {
+          "type": "field",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "field",
     "named": true,
     "fields": {
@@ -285,9 +273,47 @@
     "fields": {}
   },
   {
+    "type": "goal",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "constant",
+          "named": true
+        },
+        {
+          "type": "field",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "integer",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "message",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "constant",
+          "named": true
+        },
+        {
+          "type": "field",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "primitive_type",
@@ -305,42 +331,78 @@
     }
   },
   {
-    "type": "service",
+    "type": "request",
     "named": true,
-    "fields": {
-      "request": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "constant",
-            "named": true
-          },
-          {
-            "type": "field",
-            "named": true
-          }
-        ]
-      },
-      "response": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "constant",
-            "named": true
-          },
-          {
-            "type": "field",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "constant",
+          "named": true
+        },
+        {
+          "type": "field",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "response",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "constant",
+          "named": true
+        },
+        {
+          "type": "field",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "result",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "constant",
+          "named": true
+        },
+        {
+          "type": "field",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "service",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "request",
+          "named": true
+        },
+        {
+          "type": "response",
+          "named": true
+        },
         {
           "type": "separator",
           "named": true
@@ -352,28 +414,17 @@
     "type": "source_file",
     "named": true,
     "root": true,
-    "fields": {
-      "message": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "constant",
-            "named": true
-          },
-          {
-            "type": "field",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": false,
       "types": [
         {
           "type": "action",
+          "named": true
+        },
+        {
+          "type": "message",
           "named": true
         },
         {

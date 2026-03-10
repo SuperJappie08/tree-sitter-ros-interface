@@ -37,108 +37,109 @@ wstring[] unbounded_sequence_of_wstrings
 
 (source_file
   (comment)
-  message: (field
-    type: (primitive_type (string_type))
-    name: (identifier))
-  message: (field
-    type: (primitive_type (string_type))
-    name: (identifier)
-    default: (string))
-  message: (field
-    type: (primitive_type (string_type))
-    name: (identifier)
-    default: (string))
-  message: (field
-    type: (primitive_type (string_type))
-    name: (identifier)
-    default: (string))
-  message: (field
-    type: (primitive_type (string_type))
-    name: (identifier)
-    default: (string))
-  message: (field
-    type: (primitive_type (string_type))
-    name: (identifier)
-    default: (string))
-  message: (field
-    type: (primitive_type (string_type))
-    name: (identifier)
-    default: (string))
-  message: (field
-    type: (primitive_type (string_type))
-    name: (identifier)
-    default: (string))
-  (comment)
-  message: (field
-    type: (primitive_type (string_type))
-    name: (identifier)
-    default: (string))
-  (comment)
-  message: (constant
-    type: (primitive_type (string_type))
-    name: (const_identifier)
-    (constant_separator)
-    value: (string))
-  message: (field
-    type: (primitive_type
-      (string_type (upper_bound_specifier) (integer)))
-    name: (identifier))
-  message: (field
-    type: (primitive_type
-      (string_type (upper_bound_specifier) (integer)))
-    name: (identifier)
-    default: (string))
-  message: (field
-    type: (primitive_type
-      (string_type (upper_bound_specifier) (integer)))
-    name: (identifier)
-    default: (string))
-  message: (field
-    type: (primitive_type
-      (string_type (upper_bound_specifier) (integer)))
-    name: (identifier)
-    default: (string))
-  message: (field
-    type: (primitive_type
-      (string_type (upper_bound_specifier) (integer)))
-    name: (identifier)
-    default: (string))
-  message: (field
-    type: (primitive_type
-      (string_type (upper_bound_specifier) (integer)))
-    name: (identifier)
-    default: (string))
-  (comment)
-  message: (field
-    type: (primitive_type (string_type))
-    name: (identifier))
-  message: (field
-    type: (primitive_type (string_type))
-    name: (identifier)
-    default: (string))
-  message: (field
-    type: (primitive_type (string_type))
-    name: (identifier)
-    default: (string))
-  message: (field
-    type: (primitive_type (string_type))
-    name: (identifier)
-    default: (string))
-  (comment)
-  (comment)
-  (comment)
-  message: (field
-    type: (primitive_type (string_type))
-    type: (array (integer))
-    name: (identifier))
-  message: (field
-    type: (primitive_type (string_type))
-    type: (array (upper_bound_specifier) (integer))
-    name: (identifier))
-  message: (field
-    type: (primitive_type (string_type))
-    type: (array)
-    name: (identifier)))
+  (message
+    (field
+      type: (primitive_type (string_type))
+      name: (identifier))
+    (field
+      type: (primitive_type (string_type))
+      name: (identifier)
+      default: (string))
+    (field
+      type: (primitive_type (string_type))
+      name: (identifier)
+      default: (string))
+    (field
+      type: (primitive_type (string_type))
+      name: (identifier)
+      default: (string))
+    (field
+      type: (primitive_type (string_type))
+      name: (identifier)
+      default: (string))
+    (field
+      type: (primitive_type (string_type))
+      name: (identifier)
+      default: (string))
+    (field
+      type: (primitive_type (string_type))
+      name: (identifier)
+      default: (string))
+    (field
+      type: (primitive_type (string_type))
+      name: (identifier)
+      default: (string))
+    (comment)
+    (field
+      type: (primitive_type (string_type))
+      name: (identifier)
+      default: (string))
+    (comment)
+    (constant
+      type: (primitive_type (string_type))
+      name: (const_identifier)
+      (constant_separator)
+      value: (string))
+    (field
+      type: (primitive_type
+        (string_type (upper_bound_specifier) (integer)))
+      name: (identifier))
+    (field
+      type: (primitive_type
+        (string_type (upper_bound_specifier) (integer)))
+      name: (identifier)
+      default: (string))
+    (field
+      type: (primitive_type
+        (string_type (upper_bound_specifier) (integer)))
+      name: (identifier)
+      default: (string))
+    (field
+      type: (primitive_type
+        (string_type (upper_bound_specifier) (integer)))
+      name: (identifier)
+      default: (string))
+    (field
+      type: (primitive_type
+        (string_type (upper_bound_specifier) (integer)))
+      name: (identifier)
+      default: (string))
+    (field
+      type: (primitive_type
+        (string_type (upper_bound_specifier) (integer)))
+      name: (identifier)
+      default: (string))
+    (comment)
+    (field
+      type: (primitive_type (string_type))
+      name: (identifier))
+    (field
+      type: (primitive_type (string_type))
+      name: (identifier)
+      default: (string))
+    (field
+      type: (primitive_type (string_type))
+      name: (identifier)
+      default: (string))
+    (field
+      type: (primitive_type (string_type))
+      name: (identifier)
+      default: (string))
+    (comment)
+    (comment)
+    (comment)
+    (field
+      type: (primitive_type (string_type))
+      type: (array (integer))
+      name: (identifier))
+    (field
+      type: (primitive_type (string_type))
+      type: (array (upper_bound_specifier) (integer))
+      name: (identifier))
+    (field
+      type: (primitive_type (string_type))
+      type: (array)
+      name: (identifier))))
 
 ============================================================================+++
 Faulty String Bounds (Space before indicator)
@@ -158,3 +159,78 @@ Faulty String Bounds (Space before number)
 string<= 4 kaas
 
 ----------------------------------------------------------------------------+++
+
+============================================================================+++
+Integers are not Strings
+============================================================================+++
+int16 decimal_field_alt      10  # Is this still an integer?
+int16 decimal_field_alt_neg -10  # Is this still an integer?
+
+----------------------------------------------------------------------------+++
+(source_file
+  (message
+    (field
+    type: (primitive_type)
+    name: (identifier)
+    default: (integer))
+    (comment)
+    (field
+      type: (primitive_type)
+      name: (identifier)
+      default: (integer))
+    (comment)))
+
+============================================================================+++
+Booleans are not Strings
+============================================================================+++
+bool field_a_true true
+bool field_a_false false
+bool field_b_true True
+bool field_b_false False
+---
+bool field_c_true true    # Some comment
+bool field_c_false false  # Some comment
+bool field_d_true True    # Some comment
+bool field_d_false False  # Some comment
+
+----------------------------------------------------------------------------+++
+(source_file (service
+  (request
+    (field
+      type: (primitive_type)
+      name: (identifier)
+      default: (bool))
+    (field
+      type: (primitive_type)
+      name: (identifier)
+      default: (bool))
+    (field
+      type: (primitive_type)
+      name: (identifier)
+      default: (bool))
+    (field
+      type: (primitive_type)
+      name: (identifier)
+      default: (bool)))
+  (separator)
+  (response
+    (field
+      type: (primitive_type)
+      name: (identifier)
+      default: (bool))
+    (comment)
+    (field
+      type: (primitive_type)
+      name: (identifier)
+      default: (bool))
+    (comment)
+    (field
+      type: (primitive_type)
+      name: (identifier)
+      default: (bool))
+    (comment)
+    (field
+      type: (primitive_type)
+      name: (identifier)
+      default: (bool))
+    (comment))))
