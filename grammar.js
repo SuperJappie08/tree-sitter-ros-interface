@@ -7,6 +7,10 @@
 /// <reference types="tree-sitter-cli/dsl" />
 // @ts-check
 
+const ANNOTATIONS = [
+  'optional',
+];
+
 export default grammar({
   name: "ros_interface",
 
@@ -40,9 +44,11 @@ export default grammar({
 
     separator: $ => '---',
 
-
-    // TODO: @OPTIONAL
-    field: $ => choice($._scalar_field, $._array_field),
+    field: $ => seq(
+      // Repeating a single annotation is not allowed, however allow multiple to be future proof
+      repeat($.annotation),
+      choice($._scalar_field, $._array_field)
+    ),
 
     _scalar_field: $ => seq(
       field('type', $._base_type),
@@ -57,6 +63,7 @@ export default grammar({
     ),
 
     constant: $ => seq(
+      repeat($.annotation),
       field('type', $.primitive_type),
       field('name', $.const_identifier),
       $.constant_separator,
@@ -96,13 +103,18 @@ export default grammar({
 
     array: $ => seq('[', optional(seq(optional($.upper_bound_specifier), $.integer)), ']'),
 
-    upper_bound_specifier: $ => '<=',
+    upper_bound_specifier: $ => token.immediate('<='),
 
     constant_separator: $ => '=',
 
     comment: $ => seq(
       '#',
       /.*/,
+    ),
+
+    annotation: $ => seq(
+      '@',
+      token.immediate(field('kind', as_choice(...ANNOTATIONS))),
     ),
 
     _primitive_value: $ => choice($._simple_primitive_value, $.string),
@@ -127,6 +139,15 @@ export default grammar({
       'false',
     ),
 
+    array_value: $ => seq(
+      '[',
+      optional(seq(
+        repeat(seq($._array_content_value, ',')),
+        $._array_content_value
+      )),
+      ']'
+    ),
+
     _array_content_value: $ => choice(
       $._simple_primitive_value,
       $.array_string
@@ -135,15 +156,6 @@ export default grammar({
     array_string: $ => choice(
       $._quoted_string,
       /(?:[^\s"',\]#]|\\"|\\')(?:[^\r\n"',\]#]|\\"|\\')*/,
-    ),
-
-    array_value: $ => seq(
-      '[',
-      optional(seq(
-        repeat(seq($._array_content_value, ',', $._whitespace)),
-        $._array_content_value
-      )),
-      ']'
     ),
 
     string: $ => choice(
@@ -160,3 +172,15 @@ export default grammar({
     _newline: $ => /(\r?\n)/
   }
 });
+
+/// Helper functions
+/**
+ * @param {RuleOrLiteral[]} args
+ */
+function as_choice(...args) {
+  if (args.length > 1) {
+    return choice(...args);
+  } else {
+    return args[0]
+  }
+}

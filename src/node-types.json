@@ -58,6 +58,11 @@
     }
   },
   {
+    "type": "annotation",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "array",
     "named": true,
     "fields": {},
@@ -167,9 +172,13 @@
       }
     },
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "annotation",
+          "named": true
+        },
         {
           "type": "constant_separator",
           "named": true
@@ -258,6 +267,16 @@
           }
         ]
       }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "annotation",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -397,6 +416,10 @@
     "named": false
   },
   {
+    "type": "@",
+    "named": false
+  },
+  {
     "type": "False",
     "named": false
   },
@@ -447,6 +470,10 @@
   {
     "type": "identifier",
     "named": true
+  },
+  {
+    "type": "optional",
+    "named": false
   },
   {
     "type": "package_specifier",

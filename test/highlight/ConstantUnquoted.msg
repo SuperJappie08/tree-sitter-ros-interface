@@ -2,12 +2,16 @@ std_msgs/Header header
 # <- type
 #               ^ variable
 
+@optional
+# <- function
 bool manual
 # <- type.builtin
 #    ^ variable
-string mode
-# <- type.builtin
-#      ^ variable
+@optional string mode @optional
+# <- function
+#         ^ type.builtin
+#                ^ variable
+#                     ^ string
 uint8 status
 # <- type.builtin
 #     ^ variable

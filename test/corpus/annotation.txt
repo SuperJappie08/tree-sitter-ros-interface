@@ -1,0 +1,57 @@
+============================================================================+++
+Message with Annotations
+============================================================================+++
+string some_string_field
+@optional # This should all work
+string another_field
+
+@optional uint16 number 6
+
+----------------------------------------------------------------------------+++
+
+(source_file
+  message: (field
+    type: (primitive_type (string_type))
+    name: (identifier))
+  message: (field
+    (annotation) (comment)
+    type: (primitive_type (string_type))
+    name: (identifier))
+  message: (field
+    (annotation)
+    type: (primitive_type)
+    name: (identifier)
+    default: (integer)))
+
+============================================================================+++
+Faulty Annotation Before (Space after @)
+:error
+============================================================================+++
+string some_string_field
+@ optional
+string another_field
+
+----------------------------------------------------------------------------+++
+
+============================================================================+++
+Faulty Annotation Inline (Space after @)
+:error
+============================================================================+++
+string some_string_field
+@optional # This should all work
+string another_field
+
+@ optional uint16 number 6
+
+----------------------------------------------------------------------------+++
+
+============================================================================+++
+Faulty Annotation (Space before @)
+:error
+:skip(REASON: Enforcing also disallows comments on the line before)
+============================================================================+++
+string some_string_field
+ @optional # This shouldn't work
+string another_field
+
+----------------------------------------------------------------------------+++

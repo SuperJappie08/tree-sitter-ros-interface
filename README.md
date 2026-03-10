@@ -5,7 +5,6 @@ Designed based on the [`rosidl` parser implementation](https://github.com/ros2/r
 
 ## Current limitations:
 The following features are still missing:
- - `@optional` support
  - A lot of testing
  - Extra queries
 

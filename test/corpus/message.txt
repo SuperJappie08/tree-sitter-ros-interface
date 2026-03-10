@@ -224,143 +224,104 @@ int32 alignment_check
   (field (primitive_type) (identifier)))
 
 ============================================================================+++
-Message with Strings
+Parser Test Message
 ============================================================================+++
-# Based on: https://github.com/ros2/test_interface_files/blob/rolling/msg/Strings.msg
+#  Copyright 2021 Open Source Robotics Foundation, Inc.
+#
+#  Licensed under the Apache License, Version 2.0 (the "License");
+#  you may not use this file except in compliance with the License.
+#  You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+#  Unless required by applicable law or agreed to in writing, software
+#  distributed under the License is distributed on an "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#  See the License for the specific language governing permissions and
+#  limitations under the License.
+# Taken from:
+#   https://github.com/ros2/rosidl/blob/rolling/rosidl_adapter/test/data/msg/Test.msg
 
-string string_value
-string string_value_default1 "Hello world!"
-string string_value_default2 "Hello'world!"
-string string_value_default3 'Hello"world!'
-string string_value_default4 'Hello\'world!'
-string string_value_default4b HELLO_WOLRD
-string string_value_default5 "Hello\"world!"
-string string_value_default6 "Hello\"world!" # Here is comment
-string string_value_default7 HELLO_WOLRD # Here is comment
-string STRING_CONST="Hello world!"
-string<=22 bounded_string_value
-string<=22 bounded_string_value_default1 "Hello world!"
-string<=22 bounded_string_value_default2 "Hello'world!"
-string<=22 bounded_string_value_default3 'Hello"world!'
-string<=22 bounded_string_value_default4 'Hello\'world!'
-string<=22 bounded_string_value_default5 "Hello\"world!"
+# msg level doc
 
-# Based on: https://github.com/ros2/test_interface_files/blob/rolling/msg/WStrings.msg
+# field level doc
+bool bool_value
+byte byte_value  # field level doc, style 2
+# combined styles
+char char_value # combined styles, part 2
+float32 float32_value
+float64 float64_value
+int8 int8_value
+uint8 uint8_value
+int16 int16_value
+uint16 uint16_value
+int32 int32_value
+uint32 uint32_value
+int64 int64_value
+uint64 uint64_value
 
-wstring wstring_value
-wstring wstring_value_default1 "Hello world!"
-wstring wstring_value_default2 "Hellö wörld!"
-wstring wstring_value_default3 "ハローワールド"
-#wstring WSTRING_CONST="Hello world!"
-#wstring<=22 bounded_wstring_value
-#wstring<=22 bounded_wstring_value_default1 "Hello world!"
-wstring[3] array_of_wstrings
-wstring[<=3] bounded_sequence_of_wstrings
-wstring[] unbounded_sequence_of_wstrings
+@optional
+float32 multiline_optional
+
+@optional float32 inline_optional
+@optional float32 inline_default_optional 32.0
+@optional float32 INLINE_CONSTANT=32.0
+
+@optional string optional_default_string @optional
+@optional string OPTIONAL_STRING_CONST=@optional
 
 ----------------------------------------------------------------------------+++
-
 (source_file
+  ; LICENSE
+  (comment) (comment) (comment) (comment) (comment)
+  (comment) (comment) (comment) (comment) (comment)
+  (comment) (comment) (comment) (comment) (comment)
+  ; Start
   (comment)
+  (comment)
+  message: (field type: (primitive_type) name: (identifier))
+  message: (field type: (primitive_type) name: (identifier))
+  (comment)
+  (comment)
+  message: (field type: (primitive_type) name: (identifier))
+  (comment)
+  message: (field type: (primitive_type) name: (identifier))
+  message: (field type: (primitive_type) name: (identifier))
+  message: (field type: (primitive_type) name: (identifier))
+  message: (field type: (primitive_type) name: (identifier))
+  message: (field type: (primitive_type) name: (identifier))
+  message: (field type: (primitive_type) name: (identifier))
+  message: (field type: (primitive_type) name: (identifier))
+  message: (field type: (primitive_type) name: (identifier))
+  message: (field type: (primitive_type) name: (identifier))
+  message: (field type: (primitive_type) name: (identifier))
   message: (field
-    type: (primitive_type (string_type))
+    (annotation)
+    type: (primitive_type)
     name: (identifier))
   message: (field
-    type: (primitive_type (string_type))
-    name: (identifier)
-    default: (string))
+    (annotation)
+    type: (primitive_type)
+    name: (identifier))
   message: (field
-    type: (primitive_type (string_type))
+    (annotation)
+    type: (primitive_type)
     name: (identifier)
-    default: (string))
-  message: (field
-    type: (primitive_type (string_type))
-    name: (identifier)
-    default: (string))
-  message: (field
-    type: (primitive_type (string_type))
-    name: (identifier)
-    default: (string))
-  message: (field
-    type: (primitive_type (string_type))
-    name: (identifier)
-    default: (string))
-  message: (field
-    type: (primitive_type (string_type))
-    name: (identifier)
-    default: (string))
-  message: (field
-    type: (primitive_type (string_type))
-    name: (identifier)
-    default: (string))
-  (comment)
-  message: (field
-    type: (primitive_type (string_type))
-    name: (identifier)
-    default: (string))
-  (comment)
+    default: (float))
   message: (constant
+    (annotation)
+    type: (primitive_type)
+    name: (const_identifier)
+    (constant_separator)
+    value: (float))
+  message: (field
+    (annotation)
+    type: (primitive_type (string_type))
+    name: (identifier)
+    default: (string))
+  message: (constant
+    (annotation)
     type: (primitive_type (string_type))
     name: (const_identifier)
     (constant_separator)
-    value: (string))
-  message: (field
-    type: (primitive_type
-      (string_type (upper_bound_specifier) (integer)))
-    name: (identifier))
-  message: (field
-    type: (primitive_type
-      (string_type (upper_bound_specifier) (integer)))
-    name: (identifier)
-    default: (string))
-  message: (field
-    type: (primitive_type
-      (string_type (upper_bound_specifier) (integer)))
-    name: (identifier)
-    default: (string))
-  message: (field
-    type: (primitive_type
-      (string_type (upper_bound_specifier) (integer)))
-    name: (identifier)
-    default: (string))
-  message: (field
-    type: (primitive_type
-      (string_type (upper_bound_specifier) (integer)))
-    name: (identifier)
-    default: (string))
-  message: (field
-    type: (primitive_type
-      (string_type (upper_bound_specifier) (integer)))
-    name: (identifier)
-    default: (string))
-  (comment)
-  message: (field
-    type: (primitive_type (string_type))
-    name: (identifier))
-  message: (field
-    type: (primitive_type (string_type))
-    name: (identifier)
-    default: (string))
-  message: (field
-    type: (primitive_type (string_type))
-    name: (identifier)
-    default: (string))
-  message: (field
-    type: (primitive_type (string_type))
-    name: (identifier)
-    default: (string))
-  (comment)
-  (comment)
-  (comment)
-  message: (field
-    type: (primitive_type (string_type))
-    type: (array (integer))
-    name: (identifier))
-  message: (field
-    type: (primitive_type (string_type))
-    type: (array (upper_bound_specifier) (integer))
-    name: (identifier))
-  message: (field
-    type: (primitive_type (string_type))
-    type: (array)
-    name: (identifier)))
+    value: (string)))

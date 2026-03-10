@@ -1,0 +1,94 @@
+============================================================================+++
+Parser Test Action
+============================================================================+++
+#  Copyright 2021 Open Source Robotics Foundation, Inc.
+#
+#  Licensed under the Apache License, Version 2.0 (the "License");
+#  you may not use this file except in compliance with the License.
+#  You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+#  Unless required by applicable law or agreed to in writing, software
+#  distributed under the License is distributed on an "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#  See the License for the specific language governing permissions and
+#  limitations under the License.
+# Taken from:
+#   https://github.com/ros2/rosidl/blob/rolling/rosidl_adapter/test/data/action/Test.action
+# goal definition
+# foo
+
+# bar
+bool bool_value
+# baz
+byte byte_value
+# asd
+char char_value  # bsd
+float32 float32_value
+float64 float64_value
+int8 int8_value
+uint8 uint8_value
+int16 int16_value
+uint16 uint16_value
+int32 int32_value
+uint32 uint32_value
+int64 int64_value
+uint64 uint64_value
+string string_value
+---
+# result definition
+
+# ok docs
+bool ok
+
+@optional
+bool optional_bool
+---
+# feedback definition
+# more
+
+# sequence docs
+int32[] sequence
+
+----------------------------------------------------------------------------+++
+(source_file
+  ; LICENSE
+  (comment) (comment) (comment) (comment) (comment)
+  (comment) (comment) (comment) (comment) (comment)
+  (comment) (comment) (comment) (comment) (comment)
+  ; Start
+  (comment)
+  (comment)
+  (comment)
+  (action
+    goal: (field type: (primitive_type) name: (identifier))
+    (comment)
+    goal: (field type: (primitive_type) name: (identifier))
+    (comment)
+    goal: (field type: (primitive_type) name: (identifier))
+    (comment)
+    goal: (field type: (primitive_type) name: (identifier))
+    goal: (field type: (primitive_type) name: (identifier))
+    goal: (field type: (primitive_type) name: (identifier))
+    goal: (field type: (primitive_type) name: (identifier))
+    goal: (field type: (primitive_type) name: (identifier))
+    goal: (field type: (primitive_type) name: (identifier))
+    goal: (field type: (primitive_type) name: (identifier))
+    goal: (field type: (primitive_type) name: (identifier))
+    goal: (field type: (primitive_type) name: (identifier))
+    goal: (field type: (primitive_type) name: (identifier))
+    goal: (field type: (primitive_type (string_type)) name: (identifier))
+    (separator)
+    (comment)
+    (comment)
+    result: (field type: (primitive_type) name: (identifier))
+    result: (field (annotation) type: (primitive_type) name: (identifier))
+    (separator)
+    (comment)
+    (comment)
+    (comment)
+    feedback: (field
+      type: (primitive_type)
+      type: (array)
+      name: (identifier))))

@@ -1,0 +1,180 @@
+============================================================================+++
+Empty Message (No newline)
+============================================================================+++
+----------------------------------------------------------------------------+++
+(source_file)
+
+============================================================================+++
+Empty Message
+============================================================================+++
+
+----------------------------------------------------------------------------+++
+(source_file)
+
+============================================================================+++
+Empty Service (No newline)
+============================================================================+++
+---
+----------------------------------------------------------------------------+++
+(source_file (service (separator)))
+
+============================================================================+++
+Empty Service
+============================================================================+++
+---
+
+----------------------------------------------------------------------------+++
+(source_file (service (separator)))
+
+
+============================================================================+++
+Empty Service Response
+============================================================================+++
+bool doit
+---
+
+----------------------------------------------------------------------------+++
+(source_file (service
+  request: (field
+    type: (primitive_type)
+    name: (identifier))
+  (separator)))
+
+============================================================================+++
+Empty Service Request
+============================================================================+++
+---
+bool success
+SomeState data
+
+----------------------------------------------------------------------------+++
+(source_file (service
+  (separator)
+  response: (field
+    type: (primitive_type)
+    name: (identifier))
+  response: (field
+    type: (custom_type)
+    name: (identifier))))
+
+============================================================================+++
+Empty Action (No Newline)
+============================================================================+++
+---
+---
+----------------------------------------------------------------------------+++
+(source_file (action
+  (separator)
+  (separator)))
+
+============================================================================+++
+Empty Action
+============================================================================+++
+---
+---
+
+----------------------------------------------------------------------------+++
+(source_file (action
+  (separator)
+  (separator)))
+
+============================================================================+++
+Empty Action Goal
+============================================================================+++
+---
+bool success
+@optional
+string error_message
+float64 distance
+---
+float64 progress
+
+----------------------------------------------------------------------------+++
+(source_file (action
+  (separator)
+  result: (field
+    type: (primitive_type)
+    name: (identifier))
+  result: (field
+    (annotation)
+    type: (primitive_type (string_type))
+    name: (identifier))
+  result: (field
+    type: (primitive_type)
+    name: (identifier))
+  (separator)
+  feedback: (field
+    type: (primitive_type)
+    name: (identifier))))
+
+============================================================================+++
+Empty Action Result
+============================================================================+++
+# Calculate the distance between from and to frames
+string from "base_link"
+# Target
+string to
+---
+---
+float64 progress
+
+----------------------------------------------------------------------------+++
+(source_file
+  (comment)
+  (action
+    goal: (field
+      type: (primitive_type (string_type))
+      name: (identifier)
+      default: (string))
+    (comment)
+    goal: (field
+      type: (primitive_type (string_type))
+      name: (identifier))
+    (separator)
+    (separator)
+    feedback: (field
+      type: (primitive_type)
+      name: (identifier))))
+
+============================================================================+++
+Empty Action Feedback
+============================================================================+++
+# Calculate the distance between from and to frames
+string from "base_link"
+# Target
+string to
+---
+bool success
+@optional
+string error_message
+float64 distance
+---
+# This should mostlikely be a service instead,
+# unless you need to be able to cancel!
+
+----------------------------------------------------------------------------+++
+(source_file
+  (comment)
+  (action
+    goal: (field
+      type: (primitive_type (string_type))
+      name: (identifier)
+      default: (string))
+    (comment)
+    goal: (field
+      type: (primitive_type (string_type))
+      name: (identifier))
+    (separator)
+    result: (field
+      type: (primitive_type)
+      name: (identifier))
+    result: (field
+      (annotation)
+      type: (primitive_type (string_type))
+      name: (identifier))
+    result: (field
+      type: (primitive_type)
+      name: (identifier))
+  (separator))
+  (comment)
+  (comment))

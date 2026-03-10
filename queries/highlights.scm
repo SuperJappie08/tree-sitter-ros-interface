@@ -9,6 +9,9 @@
 ; Make test to check if necessary
 ;(field type: (primitive_type) @type.builtin)
 
+; Annotations such as @optional
+(annotation) @function
+
 ; constant
 (const_identifier) @constant
 
@@ -41,6 +44,8 @@
   "["
   "]"
 ] @punctuation.bracket
+
+"," @punctuation.delimiter
 
 [
   (upper_bound_specifier)

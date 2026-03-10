@@ -1,0 +1,160 @@
+============================================================================+++
+Message with Strings
+============================================================================+++
+# Based on: https://github.com/ros2/test_interface_files/blob/rolling/msg/Strings.msg
+
+string string_value
+string string_value_default1 "Hello world!"
+string string_value_default2 "Hello'world!"
+string string_value_default3 'Hello"world!'
+string string_value_default4 'Hello\'world!'
+string string_value_default4b HELLO_WOLRD
+string string_value_default5 "Hello\"world!"
+string string_value_default6 "Hello\"world!" # Here is comment
+string string_value_default7 HELLO_WOLRD # Here is comment
+string STRING_CONST="Hello world!"
+string<=22 bounded_string_value
+string<=22 bounded_string_value_default1 "Hello world!"
+string<=22 bounded_string_value_default2 "Hello'world!"
+string<=22 bounded_string_value_default3 'Hello"world!'
+string<=22 bounded_string_value_default4 'Hello\'world!'
+string<=22 bounded_string_value_default5 "Hello\"world!"
+
+# Based on: https://github.com/ros2/test_interface_files/blob/rolling/msg/WStrings.msg
+
+wstring wstring_value
+wstring wstring_value_default1 "Hello world!"
+wstring wstring_value_default2 "Hellö wörld!"
+wstring wstring_value_default3 "ハローワールド"
+#wstring WSTRING_CONST="Hello world!"
+#wstring<=22 bounded_wstring_value
+#wstring<=22 bounded_wstring_value_default1 "Hello world!"
+wstring[3] array_of_wstrings
+wstring[<=3] bounded_sequence_of_wstrings
+wstring[] unbounded_sequence_of_wstrings
+
+----------------------------------------------------------------------------+++
+
+(source_file
+  (comment)
+  message: (field
+    type: (primitive_type (string_type))
+    name: (identifier))
+  message: (field
+    type: (primitive_type (string_type))
+    name: (identifier)
+    default: (string))
+  message: (field
+    type: (primitive_type (string_type))
+    name: (identifier)
+    default: (string))
+  message: (field
+    type: (primitive_type (string_type))
+    name: (identifier)
+    default: (string))
+  message: (field
+    type: (primitive_type (string_type))
+    name: (identifier)
+    default: (string))
+  message: (field
+    type: (primitive_type (string_type))
+    name: (identifier)
+    default: (string))
+  message: (field
+    type: (primitive_type (string_type))
+    name: (identifier)
+    default: (string))
+  message: (field
+    type: (primitive_type (string_type))
+    name: (identifier)
+    default: (string))
+  (comment)
+  message: (field
+    type: (primitive_type (string_type))
+    name: (identifier)
+    default: (string))
+  (comment)
+  message: (constant
+    type: (primitive_type (string_type))
+    name: (const_identifier)
+    (constant_separator)
+    value: (string))
+  message: (field
+    type: (primitive_type
+      (string_type (upper_bound_specifier) (integer)))
+    name: (identifier))
+  message: (field
+    type: (primitive_type
+      (string_type (upper_bound_specifier) (integer)))
+    name: (identifier)
+    default: (string))
+  message: (field
+    type: (primitive_type
+      (string_type (upper_bound_specifier) (integer)))
+    name: (identifier)
+    default: (string))
+  message: (field
+    type: (primitive_type
+      (string_type (upper_bound_specifier) (integer)))
+    name: (identifier)
+    default: (string))
+  message: (field
+    type: (primitive_type
+      (string_type (upper_bound_specifier) (integer)))
+    name: (identifier)
+    default: (string))
+  message: (field
+    type: (primitive_type
+      (string_type (upper_bound_specifier) (integer)))
+    name: (identifier)
+    default: (string))
+  (comment)
+  message: (field
+    type: (primitive_type (string_type))
+    name: (identifier))
+  message: (field
+    type: (primitive_type (string_type))
+    name: (identifier)
+    default: (string))
+  message: (field
+    type: (primitive_type (string_type))
+    name: (identifier)
+    default: (string))
+  message: (field
+    type: (primitive_type (string_type))
+    name: (identifier)
+    default: (string))
+  (comment)
+  (comment)
+  (comment)
+  message: (field
+    type: (primitive_type (string_type))
+    type: (array (integer))
+    name: (identifier))
+  message: (field
+    type: (primitive_type (string_type))
+    type: (array (upper_bound_specifier) (integer))
+    name: (identifier))
+  message: (field
+    type: (primitive_type (string_type))
+    type: (array)
+    name: (identifier)))
+
+============================================================================+++
+Faulty String Bounds (Space before indicator)
+:error
+============================================================================+++
+# This is not allowed
+string <=4 kaas
+
+----------------------------------------------------------------------------+++
+
+============================================================================+++
+Faulty String Bounds (Space before number)
+:error
+:skip
+============================================================================+++
+# This is not allowed
+string<= 4 kaas
+
+----------------------------------------------------------------------------+++
