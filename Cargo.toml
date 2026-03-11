@@ -1,7 +1,7 @@
 [package]
 name = "tree-sitter-ros-interface"
 description = "ROS Interface grammar for tree-sitter"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Jasper van Brakel"]
 license = "MIT"
 readme = "README.md"
