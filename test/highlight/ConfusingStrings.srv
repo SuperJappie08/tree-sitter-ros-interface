@@ -1,0 +1,34 @@
+# Set type
+# <- comment
+
+string type uint8
+# <- type.builtin
+#      ^ variable
+#           ^ string
+
+string UINT_TYPE = uint8
+# <- type.builtin
+#      ^ constant
+#                ^ operator
+#                  ^ string
+string FLOAT_TYPE = float64
+# <- type.builtin
+#      ^ constant
+#                 ^ operator
+#                   ^ string
+string STRING_TYPE = string<=30
+# <- type.builtin
+#      ^ constant
+#                  ^ operator
+#                    ^ string
+#                          ^ string
+#                            ^ string
+
+---
+# <- punctuation.delimiter
+# Response
+# <- comment
+
+bool result
+# <- type.builtin
+#    ^ variable

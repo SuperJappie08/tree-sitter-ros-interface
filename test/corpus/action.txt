@@ -404,3 +404,318 @@ int16[] octal_field_alt_neg [-0O12, -0O12]
       type: (array)
       name: (identifier)
       default: (array_value (integer) (integer))))))
+
+============================================================================+++
+Action with a lot of Floats
+============================================================================+++
+
+float32 number
+
+float64 normal_field 10.0
+float64 normal_field_neg -10.0
+float64 normal_field_pos +10.0
+
+float64 int_field 10
+float64 int_field_neg -10
+float64 int_field_pos +10
+
+# Minimal
+float64 minimal_field 10.
+float64 minimal_field_neg -10.
+float64 minimal_field_pos +10.
+
+# Normal Exponent
+float64 normal_exp_neg_field 10.0e-4
+float64 normal_exp_neg_field_neg -10.0e-4
+float64 normal_exp_neg_field_pos +10.0e-4
+
+float64 normal_exp_pos_field 10.0e+4
+float64 normal_exp_pos_field_neg -10.0e+4
+float64 normal_exp_pos_field_pos +10.0e+4
+
+float64 normal_exp_field 10.0e4
+float64 normal_exp_field_neg -10.0e4
+float64 normal_exp_field_pos +10.0e4
+
+# Integer Exponent
+float64 int_exp_neg_field 10e-4
+float64 int_exp_neg_field_neg -10e-4
+float64 int_exp_neg_field_pos +10e-4
+
+float64 int_exp_pos_field 10e+4
+float64 int_exp_pos_field_neg -10e+4
+float64 int_exp_pos_field_pos +10e+4
+
+float64 int_exp_field 10e4
+float64 int_exp_field_neg -10e4
+float64 int_exp_field_pos +10e4
+
+# Minimal Exponent
+float64 min_exp_neg_field 10.e-4
+float64 min_exp_neg_field_neg -10.e-4
+float64 min_exp_neg_field_pos +10.e-4
+
+float64 min_exp_pos_field 10.e+4
+float64 min_exp_pos_field_neg -10.e+4
+float64 min_exp_pos_field_pos +10.e+4
+
+float64 min_exp_field 10.e4
+float64 min_exp_field_neg -10.e4
+float64 min_exp_field_pos +10.e4
+
+---
+
+float64 number
+
+float64 NORMAL_FIELD = 10.0
+float64 NORMAL_FIELD_NEG = -10.0
+float64 NORMAL_FIELD_POS = +10.0
+
+float64 INT_FIELD = 10
+float64 INT_FIELD_NEG = -10
+float64 INT_FIELD_POS = +10
+
+# Minimal
+float64 MINIMAL_FIELD = 10.
+float64 MINIMAL_FIELD_NEG = -10.
+float64 MINIMAL_FIELD_POS = +10.
+
+# Normal Exponent
+float64 NORMAL_EXP_NEG_FIELD = 10.0e-4
+float64 NORMAL_EXP_NEG_FIELD_NEG = -10.0e-4
+float64 NORMAL_EXP_NEG_FIELD_POS = +10.0e-4
+
+float64 NORMAL_EXP_POS_FIELD = 10.0e+4
+float64 NORMAL_EXP_POS_FIELD_NEG = -10.0e+4
+float64 NORMAL_EXP_POS_FIELD_POS = +10.0e+4
+
+float64 NORMAL_EXP_FIELD = 10.0e4
+float64 NORMAL_EXP_FIELD_NEG = -10.0e4
+float64 NORMAL_EXP_FIELD_POS = +10.0e4
+
+# Integer Exponent
+float64 INT_EXP_NEG_FIELD = 10e-4
+float64 INT_EXP_NEG_FIELD_NEG = -10e-4
+float64 INT_EXP_NEG_FIELD_POS = +10e-4
+
+float64 INT_EXP_POS_FIELD = 10e+4
+float64 INT_EXP_POS_FIELD_NEG = -10e+4
+float64 INT_EXP_POS_FIELD_POS = +10e+4
+
+float64 INT_EXP_FIELD = 10e4
+float64 INT_EXP_FIELD_NEG = -10e4
+float64 INT_EXP_FIELD_POS = +10e4
+
+# Minimal Exponent
+float64 MIN_EXP_NEG_FIELD = 10.e-4
+float64 MIN_EXP_NEG_FIELD_NEG = -10.e-4
+float64 MIN_EXP_NEG_FIELD_POS = +10.e-4
+
+float64 MIN_EXP_POS_FIELD = 10.e+4
+float64 MIN_EXP_POS_FIELD_NEG = -10.e+4
+float64 MIN_EXP_POS_FIELD_POS = +10.e+4
+
+float64 MIN_EXP_FIELD = 10.e4
+float64 MIN_EXP_FIELD_NEG = -10.e4
+float64 MIN_EXP_FIELD_POS = +10.e4
+
+---
+
+float32[] number
+
+float64[] normal_field [10.0,10.0]
+float64[] normal_field_neg [-10.0,-10.0]
+float64[] normal_field_pos [+10.0,+10.0]
+
+float64[] int_field [10,10]
+float64[] int_field_neg [-10,-10]
+float64[] int_field_pos [+10,+10]
+
+# Minimal
+float64[] minimal_field [10.,10.]
+float64[] minimal_field_neg [-10.,-10.]
+float64[] minimal_field_pos [+10.,+10.]
+
+# Normal Exponent
+float64[] normal_exp_neg_field [10.0e-4,10.0e-4]
+float64[] normal_exp_neg_field_neg [-10.0e-4,-10.0e-4]
+float64[] normal_exp_neg_field_pos [+10.0e-4,+10.0e-4]
+
+float64[] normal_exp_pos_field [10.0e+4,10.0e+4]
+float64[] normal_exp_pos_field_neg [-10.0e+4,-10.0e+4]
+float64[] normal_exp_pos_field_pos [+10.0e+4,+10.0e+4]
+
+float64[] normal_exp_field [10.0e4,10.0e4]
+float64[] normal_exp_field_neg [-10.0e4,-10.0e4]
+float64[] normal_exp_field_pos [+10.0e4,+10.0e4]
+
+# Integer Exponent
+float64[] int_exp_neg_field [10e-4,10e-4]
+float64[] int_exp_neg_field_neg [-10e-4,-10e-4]
+float64[] int_exp_neg_field_pos [+10e-4,+10e-4]
+
+float64[] int_exp_pos_field [10e+4,10e+4]
+float64[] int_exp_pos_field_neg [-10e+4,-10e+4]
+float64[] int_exp_pos_field_pos [+10e+4,+10e+4]
+
+float64[] int_exp_field [10e4,10e4]
+float64[] int_exp_field_neg [-10e4,-10e4]
+float64[] int_exp_field_pos [+10e4,+10e4]
+
+# Minimal Exponent
+float64[] min_exp_neg_field [10.e-4,10.e-4]
+float64[] min_exp_neg_field_neg [-10.e-4,-10.e-4]
+float64[] min_exp_neg_field_pos [+10.e-4,+10.e-4]
+
+float64[] min_exp_pos_field [10.e+4,10.e+4]
+float64[] min_exp_pos_field_neg [-10.e+4,-10.e+4]
+float64[] min_exp_pos_field_pos [+10.e+4,+10.e+4]
+
+float64[] min_exp_field [10.e4,10.e4]
+float64[] min_exp_field_neg [-10.e4,-10.e4]
+float64[] min_exp_field_pos [+10.e4,+10.e4]
+
+----------------------------------------------------------------------------+++
+(source_file (action
+  (goal
+    (field type: (primitive_type) name: (identifier))
+    (field type: (primitive_type) name: (identifier) default: (float))
+    (field type: (primitive_type) name: (identifier) default: (float))
+    (field type: (primitive_type) name: (identifier) default: (float))
+    (field type: (primitive_type) name: (identifier) default: (integer))
+    (field type: (primitive_type) name: (identifier) default: (integer))
+    (field type: (primitive_type) name: (identifier) default: (integer))
+    ; Minimal
+    (comment)
+    (field type: (primitive_type) name: (identifier) default: (float))
+    (field type: (primitive_type) name: (identifier) default: (float))
+    (field type: (primitive_type) name: (identifier) default: (float))
+    ; Normal Exponent
+    (comment)
+    (field type: (primitive_type) name: (identifier) default: (float))
+    (field type: (primitive_type) name: (identifier) default: (float))
+    (field type: (primitive_type) name: (identifier) default: (float))
+    (field type: (primitive_type) name: (identifier) default: (float))
+    (field type: (primitive_type) name: (identifier) default: (float))
+    (field type: (primitive_type) name: (identifier) default: (float))
+    (field type: (primitive_type) name: (identifier) default: (float))
+    (field type: (primitive_type) name: (identifier) default: (float))
+    (field type: (primitive_type) name: (identifier) default: (float))
+    ; Integer Exponent
+    (comment)
+    (field type: (primitive_type) name: (identifier) default: (float))
+    (field type: (primitive_type) name: (identifier) default: (float))
+    (field type: (primitive_type) name: (identifier) default: (float))
+    (field type: (primitive_type) name: (identifier) default: (float))
+    (field type: (primitive_type) name: (identifier) default: (float))
+    (field type: (primitive_type) name: (identifier) default: (float))
+    (field type: (primitive_type) name: (identifier) default: (float))
+    (field type: (primitive_type) name: (identifier) default: (float))
+    (field type: (primitive_type) name: (identifier) default: (float))
+    ; Normal Exponent
+    (comment)
+    (field type: (primitive_type) name: (identifier) default: (float))
+    (field type: (primitive_type) name: (identifier) default: (float))
+    (field type: (primitive_type) name: (identifier) default: (float))
+    (field type: (primitive_type) name: (identifier) default: (float))
+    (field type: (primitive_type) name: (identifier) default: (float))
+    (field type: (primitive_type) name: (identifier) default: (float))
+    (field type: (primitive_type) name: (identifier) default: (float))
+    (field type: (primitive_type) name: (identifier) default: (float))
+    (field type: (primitive_type) name: (identifier) default: (float)))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Response ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  (separator)
+  (result
+    (field type: (primitive_type) name: (identifier))
+    (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (float))
+    (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (float))
+    (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (float))
+    (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (integer))
+    (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (integer))
+    (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (integer))
+    ; Minimal
+    (comment)
+    (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (float))
+    (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (float))
+    (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (float))
+    ; Normal Exponent
+    (comment)
+    (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (float))
+    (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (float))
+    (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (float))
+    (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (float))
+    (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (float))
+    (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (float))
+    (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (float))
+    (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (float))
+    (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (float))
+    ; Integer Exponent
+    (comment)
+    (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (float))
+    (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (float))
+    (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (float))
+    (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (float))
+    (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (float))
+    (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (float))
+    (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (float))
+    (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (float))
+    (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (float))
+    ; Normal Exponent
+    (comment)
+    (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (float))
+    (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (float))
+    (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (float))
+    (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (float))
+    (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (float))
+    (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (float))
+    (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (float))
+    (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (float))
+    (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (float)))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Feedback ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  (separator)
+  (feedback
+    (field type: (primitive_type) type: (array) name: (identifier))
+    (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (float) (float)))
+    (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (float) (float)))
+    (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (float) (float)))
+    (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (integer) (integer)))
+    (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (integer) (integer)))
+    (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (integer) (integer)))
+    ; Minimal
+    (comment)
+    (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (float) (float)))
+    (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (float) (float)))
+    (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (float) (float)))
+    ; Normal Exponent
+    (comment)
+    (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (float) (float)))
+    (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (float) (float)))
+    (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (float) (float)))
+    (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (float) (float)))
+    (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (float) (float)))
+    (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (float) (float)))
+    (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (float) (float)))
+    (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (float) (float)))
+    (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (float) (float)))
+    ; Integer Exponent
+    (comment)
+    (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (float) (float)))
+    (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (float) (float)))
+    (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (float) (float)))
+    (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (float) (float)))
+    (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (float) (float)))
+    (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (float) (float)))
+    (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (float) (float)))
+    (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (float) (float)))
+    (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (float) (float)))
+    ; Normal Exponent
+    (comment)
+    (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (float) (float)))
+    (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (float) (float)))
+    (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (float) (float)))
+    (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (float) (float)))
+    (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (float) (float)))
+    (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (float) (float)))
+    (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (float) (float)))
+    (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (float) (float)))
+    (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (float) (float))))))

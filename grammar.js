@@ -128,8 +128,8 @@ export default grammar({
     _octal_integer: $ => /[+-]?0[oO][0-7_]+/,
 
     float: $ => choice(
-      /[+-]?\d+\.\d+(?:[eE][+-]?\d+)?/,
-      /[+-]?\d+[eE][+-]?\d+/,
+      /[+-]?\d+\.\d*(?:[eE][+-]?\d+)?/,
+      /[+-]?\d+\.?[eE][+-]?\d+/,
     ),
 
     bool: $ => choice(

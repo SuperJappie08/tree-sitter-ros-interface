@@ -6,8 +6,9 @@
 (field name: (identifier) @variable)
 (field type: (custom_type) @type)
 (field type: (external_custom_type) @type)
-; Make test to check if necessary
-;(field type: (primitive_type) @type.builtin)
+
+; Types
+(primitive_type) @type.builtin
 
 ; Annotations such as @optional
 (annotation) @function
@@ -15,15 +16,7 @@
 ; constant
 (const_identifier) @constant
 
-; Types
-
-; TODO: Still needs work
-(primitive_type) @type.builtin
-
-;(custom_type) @type
-;(external_custom_type) @type
-
-; values
+; Values
 [
   (string)
   (array_string)
@@ -37,7 +30,7 @@
 ] @number
 
 ; Other
-
+; Service/Action delimiter
 (separator) @punctuation.delimiter
 
 [
@@ -45,6 +38,7 @@
   "]"
 ] @punctuation.bracket
 
+; Array value delimiter
 "," @punctuation.delimiter
 
 [

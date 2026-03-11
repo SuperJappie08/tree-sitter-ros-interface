@@ -1,0 +1,17 @@
+# Set type
+
+string type uint8
+#      ^ definition.field
+
+string UINT_TYPE = uint8
+#      ^ definition.constant
+string FLOAT_TYPE = float64
+#      ^ definition.constant
+string STRING_TYPE = string<=30
+#      ^ definition.constant
+
+---
+# Response
+
+bool result
+#    ^ definition.field
