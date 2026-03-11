@@ -13,7 +13,9 @@
       ],
       "injection-regex": "^(ros_interface|rosmsg)$",
       "class-name": "TreeSitterROSInterface",
-      "highlights": "queries/highlights.scm"
+      "highlights": "queries/highlights.scm",
+      "injections": "queries/injections.scm",
+      "tags": "queries/tags.scm"
     }
   ],
   "metadata": {
