@@ -21,7 +21,7 @@ jobs:
     with:
       generate: true
   pypi:
-    uses: tree-sitter/workflows/.github/workflows/package-pypi.yml@main
+    uses: dolphinau/workflows/.github/workflows/package-pypi.yml@main
     secrets:
       PYPI_API_TOKEN: ${{secrets.PYPI_API_TOKEN}}
     with:
