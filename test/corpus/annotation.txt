@@ -15,7 +15,7 @@ string another_field
       type: (primitive_type (string_type))
       name: (identifier))
     (field
-      (annotation) (comment)
+      (annotation) (inline_comment)
       type: (primitive_type (string_type))
       name: (identifier))
     (field

@@ -567,17 +567,25 @@
       "value": "="
     },
     "comment": {
-      "type": "SEQ",
+      "type": "CHOICE",
       "members": [
         {
-          "type": "STRING",
-          "value": "#"
+          "type": "SYMBOL",
+          "name": "line_comment"
         },
         {
-          "type": "PATTERN",
-          "value": ".*"
+          "type": "SYMBOL",
+          "name": "inline_comment"
         }
       ]
+    },
+    "inline_comment": {
+      "type": "PATTERN",
+      "value": "[ \\t]+#.*"
+    },
+    "line_comment": {
+      "type": "PATTERN",
+      "value": "#.*"
     },
     "annotation": {
       "type": "SEQ",
@@ -829,6 +837,8 @@
   "precedences": [],
   "externals": [],
   "inline": [],
-  "supertypes": [],
+  "supertypes": [
+    "comment"
+  ],
   "reserved": {}
 }

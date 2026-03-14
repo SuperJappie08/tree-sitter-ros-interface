@@ -54,21 +54,21 @@ int32[] sequence
 ----------------------------------------------------------------------------+++
 (source_file
   ; LICENSE
-  (comment) (comment) (comment) (comment) (comment)
-  (comment) (comment) (comment) (comment) (comment)
-  (comment) (comment) (comment) (comment) (comment)
+  (line_comment) (line_comment) (line_comment) (line_comment) (line_comment)
+  (line_comment) (line_comment) (line_comment) (line_comment) (line_comment)
+  (line_comment) (line_comment) (line_comment) (line_comment) (line_comment)
   ; Start
-  (comment)
-  (comment)
-  (comment)
+  (line_comment)
+  (line_comment)
+  (line_comment)
   (action
     (goal
       (field type: (primitive_type) name: (identifier))
-      (comment)
+      (line_comment)
       (field type: (primitive_type) name: (identifier))
-      (comment)
+      (line_comment)
       (field type: (primitive_type) name: (identifier))
-      (comment)
+      (inline_comment)
       (field type: (primitive_type) name: (identifier))
       (field type: (primitive_type) name: (identifier))
       (field type: (primitive_type) name: (identifier))
@@ -81,15 +81,15 @@ int32[] sequence
       (field type: (primitive_type) name: (identifier))
       (field type: (primitive_type (string_type)) name: (identifier)))
     (separator)
-    (comment)
-    (comment)
+    (line_comment)
+    (line_comment)
     (result
       (field type: (primitive_type) name: (identifier))
       (field (annotation) type: (primitive_type) name: (identifier)))
     (separator)
-    (comment)
-    (comment)
-    (comment)
+    (line_comment)
+    (line_comment)
+    (line_comment)
     (feedback
       (field type: (primitive_type) type: (array) name: (identifier)))))
 
@@ -184,13 +184,13 @@ int16[] octal_field_alt_neg [-0O12, -0O12]
     (field type: (primitive_type) name: (identifier) default: (integer))
     (field type: (primitive_type) name: (identifier) default: (integer))
     ; Binary
-    (comment)
+    (line_comment)
     (field type: (primitive_type) name: (identifier) default: (integer))
     (field type: (primitive_type) name: (identifier) default: (integer))
     (field type: (primitive_type) name: (identifier) default: (integer))
     (field type: (primitive_type) name: (identifier) default: (integer))
     ; Hexadecimal
-    (comment)
+    (line_comment)
     (field type: (primitive_type) name: (identifier) default: (integer))
     (field type: (primitive_type) name: (identifier) default: (integer))
     (field type: (primitive_type) name: (identifier) default: (integer))
@@ -200,7 +200,7 @@ int16[] octal_field_alt_neg [-0O12, -0O12]
     (field type: (primitive_type) name: (identifier) default: (integer))
     (field type: (primitive_type) name: (identifier) default: (integer))
     ; Binary
-    (comment)
+    (line_comment)
     (field type: (primitive_type) name: (identifier) default: (integer))
     (field type: (primitive_type) name: (identifier) default: (integer))
     (field type: (primitive_type) name: (identifier) default: (integer))
@@ -220,7 +220,7 @@ int16[] octal_field_alt_neg [-0O12, -0O12]
       (constant_separator)
       value: (integer))
     ; Binary
-    (comment)
+    (line_comment)
     (constant
       type: (primitive_type)
       name: (const_identifier)
@@ -242,7 +242,7 @@ int16[] octal_field_alt_neg [-0O12, -0O12]
       (constant_separator)
       value: (integer))
     ; Hexadecimal
-    (comment)
+    (line_comment)
     (constant
       type: (primitive_type)
       name: (const_identifier)
@@ -284,7 +284,7 @@ int16[] octal_field_alt_neg [-0O12, -0O12]
       (constant_separator)
       value: (integer))
     ; Binary
-    (comment)
+    (line_comment)
     (constant
       type: (primitive_type)
       name: (const_identifier)
@@ -319,7 +319,7 @@ int16[] octal_field_alt_neg [-0O12, -0O12]
       name: (identifier)
       default: (array_value (integer) (integer)))
     ; Binary
-    (comment)
+    (line_comment)
     (field
       type: (primitive_type)
       type: (array)
@@ -341,7 +341,7 @@ int16[] octal_field_alt_neg [-0O12, -0O12]
       name: (identifier)
       default: (array_value (integer) (integer)))
     ; Hexadecimal
-    (comment)
+    (line_comment)
     (field
       type: (primitive_type)
       type: (array)
@@ -383,7 +383,7 @@ int16[] octal_field_alt_neg [-0O12, -0O12]
       name: (identifier)
       default: (array_value (integer) (integer)))
     ; Binary
-    (comment)
+    (line_comment)
     (field
       type: (primitive_type)
       type: (array)
@@ -586,12 +586,12 @@ float64[] min_exp_field_pos [+10.e4,+10.e4]
     (field type: (primitive_type) name: (identifier) default: (integer))
     (field type: (primitive_type) name: (identifier) default: (integer))
     ; Minimal
-    (comment)
+    (line_comment)
     (field type: (primitive_type) name: (identifier) default: (float))
     (field type: (primitive_type) name: (identifier) default: (float))
     (field type: (primitive_type) name: (identifier) default: (float))
     ; Normal Exponent
-    (comment)
+    (line_comment)
     (field type: (primitive_type) name: (identifier) default: (float))
     (field type: (primitive_type) name: (identifier) default: (float))
     (field type: (primitive_type) name: (identifier) default: (float))
@@ -602,7 +602,7 @@ float64[] min_exp_field_pos [+10.e4,+10.e4]
     (field type: (primitive_type) name: (identifier) default: (float))
     (field type: (primitive_type) name: (identifier) default: (float))
     ; Integer Exponent
-    (comment)
+    (line_comment)
     (field type: (primitive_type) name: (identifier) default: (float))
     (field type: (primitive_type) name: (identifier) default: (float))
     (field type: (primitive_type) name: (identifier) default: (float))
@@ -613,7 +613,7 @@ float64[] min_exp_field_pos [+10.e4,+10.e4]
     (field type: (primitive_type) name: (identifier) default: (float))
     (field type: (primitive_type) name: (identifier) default: (float))
     ; Normal Exponent
-    (comment)
+    (line_comment)
     (field type: (primitive_type) name: (identifier) default: (float))
     (field type: (primitive_type) name: (identifier) default: (float))
     (field type: (primitive_type) name: (identifier) default: (float))
@@ -634,12 +634,12 @@ float64[] min_exp_field_pos [+10.e4,+10.e4]
     (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (integer))
     (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (integer))
     ; Minimal
-    (comment)
+    (line_comment)
     (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (float))
     (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (float))
     (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (float))
     ; Normal Exponent
-    (comment)
+    (line_comment)
     (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (float))
     (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (float))
     (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (float))
@@ -650,7 +650,7 @@ float64[] min_exp_field_pos [+10.e4,+10.e4]
     (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (float))
     (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (float))
     ; Integer Exponent
-    (comment)
+    (line_comment)
     (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (float))
     (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (float))
     (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (float))
@@ -661,7 +661,7 @@ float64[] min_exp_field_pos [+10.e4,+10.e4]
     (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (float))
     (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (float))
     ; Normal Exponent
-    (comment)
+    (line_comment)
     (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (float))
     (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (float))
     (constant type: (primitive_type) name: (const_identifier) (constant_separator) value: (float))
@@ -682,12 +682,12 @@ float64[] min_exp_field_pos [+10.e4,+10.e4]
     (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (integer) (integer)))
     (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (integer) (integer)))
     ; Minimal
-    (comment)
+    (line_comment)
     (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (float) (float)))
     (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (float) (float)))
     (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (float) (float)))
     ; Normal Exponent
-    (comment)
+    (line_comment)
     (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (float) (float)))
     (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (float) (float)))
     (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (float) (float)))
@@ -698,7 +698,7 @@ float64[] min_exp_field_pos [+10.e4,+10.e4]
     (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (float) (float)))
     (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (float) (float)))
     ; Integer Exponent
-    (comment)
+    (line_comment)
     (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (float) (float)))
     (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (float) (float)))
     (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (float) (float)))
@@ -709,7 +709,7 @@ float64[] min_exp_field_pos [+10.e4,+10.e4]
     (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (float) (float)))
     (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (float) (float)))
     ; Normal Exponent
-    (comment)
+    (line_comment)
     (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (float) (float)))
     (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (float) (float)))
     (field type: (primitive_type) type: (array) name: (identifier) default: (array_value (float) (float)))

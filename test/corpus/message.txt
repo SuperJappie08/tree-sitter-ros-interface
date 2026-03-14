@@ -19,7 +19,7 @@ uint64 uint64_value
 
 ----------------------------------------------------------------------------+++
 (source_file
-  (comment)
+  (line_comment)
   (message
     (field type: (primitive_type) name: (identifier))
     (field type: (primitive_type) name: (identifier))
@@ -78,8 +78,8 @@ int32 alignment_check
 ----------------------------------------------------------------------------+++
 
 (source_file
-  (comment)
-  (comment)
+  (line_comment)
+  (line_comment)
   (message
     (field (primitive_type) (array (integer)) (identifier))
     (field (primitive_type) (array (integer)) (identifier))
@@ -154,7 +154,7 @@ int32 alignment_check
       (primitive_type (string_type)) (array (integer))
       (identifier)
       (array_value (array_string) (array_string) (array_string)))
-    (comment)
+    (line_comment)
     (field (primitive_type) (identifier))))
 
 ============================================================================+++
@@ -207,19 +207,19 @@ float32 multiline_optional
 ----------------------------------------------------------------------------+++
 (source_file
   ; LICENSE
-  (comment) (comment) (comment) (comment) (comment)
-  (comment) (comment) (comment) (comment) (comment)
-  (comment) (comment) (comment) (comment) (comment)
+  (line_comment) (line_comment) (line_comment) (line_comment) (line_comment)
+  (line_comment) (line_comment) (line_comment) (line_comment) (line_comment)
+  (line_comment) (line_comment) (line_comment) (line_comment) (line_comment)
   ; Start
-  (comment)
-  (comment)
+  (line_comment)
+  (line_comment)
   (message
     (field type: (primitive_type) name: (identifier))
     (field type: (primitive_type) name: (identifier))
-    (comment)
-    (comment)
+    (inline_comment)
+    (line_comment)
     (field type: (primitive_type) name: (identifier))
-    (comment)
+    (inline_comment)
     (field type: (primitive_type) name: (identifier))
     (field type: (primitive_type) name: (identifier))
     (field type: (primitive_type) name: (identifier))

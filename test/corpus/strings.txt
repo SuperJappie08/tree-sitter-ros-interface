@@ -36,7 +36,7 @@ wstring[] unbounded_sequence_of_wstrings
 ----------------------------------------------------------------------------+++
 
 (source_file
-  (comment)
+  (line_comment)
   (message
     (field
       type: (primitive_type (string_type))
@@ -69,12 +69,12 @@ wstring[] unbounded_sequence_of_wstrings
       type: (primitive_type (string_type))
       name: (identifier)
       default: (string))
-    (comment)
+    (inline_comment)
     (field
       type: (primitive_type (string_type))
       name: (identifier)
       default: (string))
-    (comment)
+    (inline_comment)
     (constant
       type: (primitive_type (string_type))
       name: (const_identifier)
@@ -109,7 +109,7 @@ wstring[] unbounded_sequence_of_wstrings
         (string_type (upper_bound_specifier) (integer)))
       name: (identifier)
       default: (string))
-    (comment)
+    (line_comment)
     (field
       type: (primitive_type (string_type))
       name: (identifier))
@@ -125,9 +125,9 @@ wstring[] unbounded_sequence_of_wstrings
       type: (primitive_type (string_type))
       name: (identifier)
       default: (string))
-    (comment)
-    (comment)
-    (comment)
+    (line_comment)
+    (line_comment)
+    (line_comment)
     (field
       type: (primitive_type (string_type))
       type: (array (integer))
@@ -173,12 +173,12 @@ int16 decimal_field_alt_neg -10  # Is this still an integer?
     type: (primitive_type)
     name: (identifier)
     default: (integer))
-    (comment)
+    (inline_comment)
     (field
       type: (primitive_type)
       name: (identifier)
       default: (integer))
-    (comment)))
+    (inline_comment)))
 
 ============================================================================+++
 Booleans are not Strings
@@ -218,19 +218,19 @@ bool field_d_false False  # Some comment
       type: (primitive_type)
       name: (identifier)
       default: (bool))
-    (comment)
+    (inline_comment)
     (field
       type: (primitive_type)
       name: (identifier)
       default: (bool))
-    (comment)
+    (inline_comment)
     (field
       type: (primitive_type)
       name: (identifier)
       default: (bool))
-    (comment)
+    (inline_comment)
     (field
       type: (primitive_type)
       name: (identifier)
       default: (bool))
-    (comment))))
+    (inline_comment))))

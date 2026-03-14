@@ -105,14 +105,14 @@ float64 progress
 
 ----------------------------------------------------------------------------+++
 (source_file
-  (comment)
+  (line_comment)
   (action
     (goal
       (field
         type: (primitive_type (string_type))
         name: (identifier)
         default: (string))
-      (comment)
+      (line_comment)
       (field
         type: (primitive_type (string_type))
         name: (identifier)))
@@ -139,14 +139,14 @@ float64 distance
 
 ----------------------------------------------------------------------------+++
 (source_file
-  (comment)
+  (line_comment)
   (action
   (goal
     (field
       type: (primitive_type (string_type))
       name: (identifier)
       default: (string))
-    (comment)
+    (line_comment)
     (field
       type: (primitive_type (string_type))
       name: (identifier)))
@@ -156,5 +156,5 @@ float64 distance
     (field (annotation) type: (primitive_type (string_type)) name: (identifier))
     (field type: (primitive_type) name: (identifier)))
   (separator))
-  (comment)
-  (comment))
+  (line_comment)
+  (line_comment))
