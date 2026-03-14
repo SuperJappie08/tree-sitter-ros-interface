@@ -11,11 +11,11 @@
         "srv",
         "action"
       ],
-      "injection-regex": "^(ros_interface|rosmsg)$",
-      "class-name": "TreeSitterROSInterface",
       "highlights": "queries/highlights.scm",
       "injections": "queries/injections.scm",
-      "tags": "queries/tags.scm"
+      "tags": "queries/tags.scm",
+      "injection-regex": "^(ros_interface|rosmsg)$",
+      "class-name": "TreeSitterROSInterface"
     }
   ],
   "metadata": {

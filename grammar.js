@@ -14,6 +14,10 @@ const ANNOTATIONS = [
 export default grammar({
   name: "ros_interface",
 
+  supertypes: $ => [
+    $.comment
+  ],
+
   extras: $ => [
     $.comment,
     /\s+/
@@ -107,10 +111,14 @@ export default grammar({
 
     constant_separator: $ => '=',
 
-    comment: $ => seq(
-      '#',
-      /.*/,
+    comment: $ => choice(
+      $.line_comment,
+      $.inline_comment,
     ),
+
+    inline_comment: $ => /[ \t]+#.*/,
+
+    line_comment: $ => /#.*/,
 
     annotation: $ => seq(
       '@',

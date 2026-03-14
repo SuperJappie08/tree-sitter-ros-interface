@@ -15,7 +15,7 @@ int32 SOME_RESPONSE_CONSTANT = 123
 
 ----------------------------------------------------------------------------+++
 (source_file
-  (comment)
+  (line_comment)
   (service
   (request
     (constant
@@ -88,21 +88,21 @@ bool ok
 ----------------------------------------------------------------------------+++
 (source_file
   ; LICENSE
-  (comment) (comment) (comment) (comment) (comment)
-  (comment) (comment) (comment) (comment) (comment)
-  (comment) (comment) (comment) (comment) (comment)
+  (line_comment) (line_comment) (line_comment) (line_comment) (line_comment)
+  (line_comment) (line_comment) (line_comment) (line_comment) (line_comment)
+  (line_comment) (line_comment) (line_comment) (line_comment) (line_comment)
   ; Start
-  (comment)
-  (comment)
-  (comment)
+  (line_comment)
+  (line_comment)
+  (line_comment)
   (service
     (request
       (field type: (primitive_type) name: (identifier))
       (field type: (primitive_type) name: (identifier))
-      (comment)
-      (comment)
+      (inline_comment)
+      (line_comment)
       (field type: (primitive_type) name: (identifier))
-      (comment)
+      (inline_comment)
       (field type: (primitive_type) name: (identifier))
       (field type: (primitive_type) name: (identifier))
       (field type: (primitive_type) name: (identifier))
@@ -115,8 +115,8 @@ bool ok
       (field type: (primitive_type) name: (identifier))
       (field type: (primitive_type (string_type)) name: (identifier)))
     (separator)
-    (comment)
-    (comment)
+    (line_comment)
+    (line_comment)
     (response
       (field type: (primitive_type) name: (identifier))
       (field (annotation) type: (primitive_type) name: (identifier)))))
