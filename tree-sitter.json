@@ -19,7 +19,7 @@
     }
   ],
   "metadata": {
-    "version": "0.1.1",
+    "version": "0.1.2",
     "license": "MIT",
     "description": "ROS Interface grammar for tree-sitter",
     "authors": [
