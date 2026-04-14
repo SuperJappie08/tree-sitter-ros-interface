@@ -260,3 +260,84 @@ float32 multiline_optional
       name: (const_identifier)
       (constant_separator)
       value: (string))))
+============================================================================+++
+Message with custom types
+============================================================================+++
+Header header
+
+uint8 TYPE_A = 1
+uint8 TYPE_B = 2
+uint8 TYPE_C = 3
+# Some comment
+uint8 TYPE_X = 99
+uint8 type
+
+uint8[] types
+
+# some comment
+bool[] on_off
+
+message_pkg/MessageName message_1
+message_pkg/message_name message_2
+MessagePkg/MessageName messages_3
+MessagePkg/message_name messages_2
+
+----------------------------------------------------------------------------+++
+(source_file
+      (message
+        (field
+          (custom_type)
+          (identifier))
+        (constant
+          (primitive_type)
+          (const_identifier)
+          (constant_separator)
+          (integer))
+        (constant
+          (primitive_type)
+          (const_identifier)
+          (constant_separator)
+          (integer))
+        (constant
+          (primitive_type)
+          (const_identifier)
+          (constant_separator)
+          (integer))
+        (comment)
+        (constant
+          (primitive_type)
+          (const_identifier)
+          (constant_separator)
+          (integer))
+        (field
+          (primitive_type)
+          (identifier))
+        (field
+          (primitive_type)
+          (array)
+          (identifier))
+        (comment)
+        (field
+          (primitive_type)
+          (array)
+          (identifier))
+        (field
+          (external_custom_type
+            (package_specifier)
+            (custom_type))
+          (identifier))
+        (field
+          (external_custom_type
+            (package_specifier)
+            (custom_type))
+          (identifier))
+        (field
+          (external_custom_type
+            (package_specifier)
+            (custom_type))
+          (identifier))
+        (field
+          (external_custom_type
+            (package_specifier)
+            (custom_type))
+          (identifier))))
