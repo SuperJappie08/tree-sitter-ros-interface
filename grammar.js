@@ -82,24 +82,24 @@ export default grammar({
       $.external_custom_type,
     ),
 
-    custom_type: $ => /[A-Z][A-Za-z0-9]*/,
+    custom_type: $ => /[a-zA-Z][a-zA-Z0-9_]*/,
 
-    package_specifier: $ => new RustRegex('([a-z](?:[a-z0-9_]?[a-z0-9]+)*)/'),
+    package_specifier: $ => new RustRegex('([a-zA-Z](?:[a-zA-Z0-9_]?[a-zA-Z0-9]+)*)/'),
 
     external_custom_type: $ => seq($.package_specifier, $.custom_type),
 
     primitive_type: $ => choice(
-      'bool',
-      'byte',
-      'char',
-      new RustRegex('float(?:32|64)'),
-      new RustRegex('u?int(?:8|16|32|64)'),
+      token(prec(1, 'bool')),
+      token(prec(1, 'byte')),
+      token(prec(1, 'char')),
+      token(prec(1, new RustRegex('float(?:32|64)'))),
+      token(prec(1, new RustRegex('u?int(?:8|16|32|64)'))),
       $.string_type,
-      'duration',
-      'time'
+      token(prec(1, 'duration')),
+      token(prec(1, 'time'))
     ),
 
-    string_type: $ => seq(/w?string/, optional(seq($.upper_bound_specifier, $.integer))),
+    string_type: $ => seq(token(prec(1, /w?string/)), optional(seq($.upper_bound_specifier, $.integer))),
 
     array: $ => seq('[', optional(seq(optional($.upper_bound_specifier), $.integer)), ']'),
 
